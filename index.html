@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>财神爷 News</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f1117;--sb:#13151f;--border:#1e2130;
+  --text:#e8edf5;--muted:#8892a4;--dim:#4a5568;
+  --ai:#818cf8;--tr:#34d399;--score:#fbbf24;--tk:#38bdf8;
+  --tl:#252838;--dot:#353a52;--hover:#c7d2fe;
+}
+html,body{height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--text);display:flex;font-size:17px;line-height:1.6}
+
+/* sidebar */
+.sb{width:220px;min-width:220px;background:var(--sb);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:10}
+.sb-logo{padding:28px 20px 20px;font-size:21px;font-weight:700;border-bottom:1px solid var(--border)}
+.sb-logo span{color:#fbbf24}
+.sb-up{font-size:13px;color:var(--dim);font-weight:400;margin-top:5px}
+.sb-nav{padding:18px 12px;flex:1}
+.nav-lbl{font-size:12px;font-weight:600;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;
+  padding:0 8px;margin-bottom:8px}
+.nav-item{display:flex;align-items:center;gap:11px;padding:13px 14px;border-radius:9px;
+  cursor:pointer;font-size:16px;font-weight:500;color:var(--muted);transition:all .15s;
+  margin-bottom:4px;user-select:none}
+.nav-item:hover{background:rgba(255,255,255,.04);color:var(--text)}
+.nav-item.ai{background:rgba(129,140,248,.12);color:var(--ai)}
+.nav-item.tr{background:rgba(52,211,153,.12);color:var(--tr)}
+.ndot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ndot-ai{background:var(--ai)}.ndot-tr{background:var(--tr)}
+.ncount{margin-left:auto;font-size:13px;color:var(--dim);background:rgba(255,255,255,.06);
+  padding:2px 9px;border-radius:10px}
+
+/* main */
+.main{margin-left:220px;flex:1;min-height:100vh;padding:0 0 80px}
+.section{display:none;max-width:1700px;padding:32px 48px 0}
+.section.active{display:block}
+
+/* category bar */
+.cat-bar{display:flex;flex-wrap:wrap;gap:8px;padding:0 0 24px;
+  border-bottom:1px solid var(--border);margin-bottom:4px}
+.cat-btn{padding:8px 16px;border-radius:20px;font-size:15px;font-weight:500;
+  cursor:pointer;border:1.5px solid var(--border);color:var(--muted);
+  background:transparent;transition:all .15s;white-space:nowrap}
+.cat-btn:hover{color:var(--text);border-color:#4a5568}
+.cat-btn.active{border-color:var(--ai);color:var(--ai);background:rgba(129,140,248,.1)}
+.section[id="sec-trading"] .cat-btn.active{border-color:var(--tr);color:var(--tr);background:rgba(52,211,153,.1)}
+.section[id="sec-trading"] .cat-btn[data-filter="top"].active{border-color:#fbbf24;color:#fbbf24;background:rgba(251,191,36,.1)}
+
+/* date group */
+.dgroup{margin-bottom:8px}
+.dheader{font-size:22px;font-weight:700;color:var(--text);padding:28px 0 18px;
+  border-bottom:1px solid var(--border)}
+.dsub{font-size:16px;font-weight:400;color:var(--muted);margin-left:10px}
+
+/* timeline */
+.ilist{position:relative}
+.ilist::before{content:'';position:absolute;left:62px;top:0;bottom:0;
+  width:1px;background:var(--tl)}
+.item{display:flex;padding:26px 0;border-bottom:1px solid var(--border);position:relative}
+.item:last-child{border-bottom:none}
+.item-time{width:62px;min-width:62px;font-size:15px;color:var(--dim);
+  font-variant-numeric:tabular-nums;padding-top:3px;text-align:right;
+  padding-right:22px;position:relative;flex-shrink:0}
+.item-time::after{content:'';position:absolute;right:-6px;top:9px;
+  width:12px;height:12px;border-radius:50%;background:var(--dot);
+  border:2px solid var(--bg);z-index:1}
+.item-body{flex:1;padding-left:26px}
+.item-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.badge{font-size:13px;font-weight:600;padding:3px 11px;border-radius:6px;line-height:1.4}
+.badge-ai{background:rgba(129,140,248,.15);color:var(--ai)}
+.badge-trading{background:rgba(52,211,153,.15);color:var(--tr)}
+.score-badge{font-size:13px;font-weight:700;color:var(--score);
+  background:rgba(251,191,36,.1);padding:3px 10px;border-radius:6px}
+.isrc{font-size:15px;color:var(--muted)}
+.ticker{font-size:13px;font-weight:700;color:var(--tk);
+  background:rgba(56,189,248,.1);padding:2px 7px;border-radius:5px}
+.item-title{display:block;font-size:18px;font-weight:600;color:var(--text);
+  text-decoration:none;line-height:1.5;margin-bottom:10px}
+.item-title:hover{color:var(--hover);text-decoration:underline}
+.item-summary{font-size:16px;color:var(--muted);line-height:1.75}
+.item-sentiment{margin-top:10px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.sentiment{font-size:13px;font-weight:700;padding:3px 10px;border-radius:6px}
+.s-bull{background:rgba(52,211,153,.15);color:#34d399}
+.s-bear{background:rgba(248,113,113,.15);color:#f87171}
+.s-neutral{background:rgba(148,163,184,.12);color:#94a3b8}
+.tgt-list{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tgt-item{font-size:13px;font-weight:600;color:var(--tk);background:rgba(56,189,248,.08);
+  padding:2px 8px;border-radius:5px;display:flex;align-items:center;gap:4px}
+.tgt-reason{font-weight:400;color:var(--muted);font-size:12px}
+.empty{padding:80px 0;text-align:center;font-size:17px;color:var(--dim)}
+
+@media(max-width:1100px){
+  .sb{width:180px;min-width:180px}
+  .main{margin-left:180px}
+  .section{padding:20px 24px 0}
+  .item-title{font-size:17px}
+}
+</style>
+</head>
+<body>
+<aside class="sb">
+  <div class="sb-logo">💰 财神爷 <span>News</span>
+    <div class="sb-up">更新 2026-05-12 19:00</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="nav-lbl">精选频道</div>
+    <div class="nav-item ai" onclick="switchSection('aihot',this)">
+      <span class="ndot ndot-ai"></span>AI Hot<span class="ncount">40</span>
+    </div>
+    <div class="nav-item" onclick="switchSection('trading',this)">
+      <span class="ndot ndot-tr"></span>Trading Hot<span class="ncount">20</span>
+    </div>
+  </nav>
+</aside>
+<main class="main">
+  <div class="section active" id="sec-aihot">
+    <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-aihot" onclick="filterCat(this)">🔥 全部精选</button><button class="cat-btn" data-filter="ai-models" data-section="sec-aihot" onclick="filterCat(this)">🤖 模型发布</button><button class="cat-btn" data-filter="ai-products" data-section="sec-aihot" onclick="filterCat(this)">🚀 产品更新</button><button class="cat-btn" data-filter="industry" data-section="sec-aihot" onclick="filterCat(this)">🏭 行业动态</button><button class="cat-btn" data-filter="paper" data-section="sec-aihot" onclick="filterCat(this)">📄 论文研究</button><button class="cat-btn" data-filter="tip" data-section="sec-aihot" onclick="filterCat(this)">💡 技巧观点</button></div>
+        <div class="dgroup">
+      <div class="dheader">今天 <span class='dsub'>05月12日 周二</span></div>
+      <div class="ilist">
+      <div class="item" data-cats="tip">
+        <div class="item-time">18:04</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：可灵 Kling AI (@Kling_ai)</span></div>
+          <a class="item-title" href="https://x.com/Kling_ai/status/2054140718776549704" target="_blank" rel="noopener">结合GPT与Kling AI生成超写实F1直播截图</a>
+          <div class="item-summary">用户利用GPT image 2与Kling AI，根据详细提示词生成了一张模拟电视转播视角的超写实F1赛事直播截图。画面聚焦于一位在VIP围场/车队车库中的年轻女性，其身份特征从参考图像中被精确保留。她佩戴专业赛车耳机，神情紧张专注，画面包含&quot;FINAL LAP&quot;横幅、计时塔、直播标识等完整的转播图形元素。作品特别注重广播级细节，如压缩伪影、自然肤质和8K画质，旨在完美呈现如同真实电视截图的视觉效果。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">11:55</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/949/198.htm" target="_blank" rel="noopener">全国首例 AI 代写&quot;种草笔记&quot;案宣判，法院判决工具提供者赔偿平台 10 万元</a>
+          <div class="item-summary">全国首例 AI 代写&quot;种草笔记&quot;不正当竞争案在浙江省杭州市中级人民法院宣判。被告 B 公司和 C 公司运营的 AI 写作工具能一键生成某社交平台风格的种草文案，以会员制营利，诱导用户发布虚假消费体验，破坏平台真实内容生态。法院判决被告赔偿原告经济损失及合理开支共计 10 万元，并创新性使用&quot;四要素判定法&quot;，明确生成式人工智能服务提供者需尽到合理注意义务，为治理 AI 生成虚假信息划定了法律边界。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">11:42</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/949/178.htm" target="_blank" rel="noopener">npm 生态遭大范围投毒：TanStack、Mistral AI、UiPath 等受波及，可窃取云密钥与 GitHub 令牌</a>
+          <div class="item-summary">网络安全机构Socket发现针对npm生态的大规模供应链攻击&quot;Mini Shai-Hulud&quot;。攻击者组合利用GitHub Actions的三种漏洞，绕过了双重身份验证等保护机制，向TanStack、Mistral AI、UiPath等知名项目的软件包中植入恶意版本。被篡改的包在安装时会自动执行恶意代码，窃取AWS、GCP、Kubernetes、GitHub令牌及SSH私钥等敏感凭证。此次攻击波及超过160个包名、近373个恶意版本，目前所有恶意版本已被清理。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">11:08</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
+          <a class="item-title" href="https://x.com/SiliconFlowAI/status/2054035848866504953" target="_blank" rel="noopener">答案之外：信息呈现方式正成为AI智能层的一部分</a>
+          <div class="item-summary">信息的结构与呈现方式本身正成为AI智能层的关键。当前，让大语言模型以HTML格式输出，能提供比默认Markdown更丰富的视觉布局与交互性，是值得尝试的技巧。长远来看，人类虽偏好用音频输入，但视觉（图像/动画/视频）才是更理想的AI输出形式，因为大脑约三分之一皮层专司视觉处理。AI输出形态将沿&quot;原始文本→Markdown→HTML→交互式神经视频/模拟&quot;的路径演进，最终可能由扩散神经网络直接生成交互视频。同时，输入方式也需融合音频、文本、视频及手势等多模态交互。在人机输入输出</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">10:19</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：歸藏 (@op7418)</span></div>
+          <a class="item-title" href="https://x.com/op7418/status/2054023602874491326" target="_blank" rel="noopener">Thinking Machines发布原生多模态&quot;交互模型&quot;，实现实时人机协作</a>
+          <div class="item-summary">前OpenAI CTO Mira创立的Thinking Machines公司发布了一种创新的&quot;交互模型&quot;。该模型能原生、持续地接收音频、视频和文本等多模态输入，并实时思考与响应，而非通过Agent串联多个独立模型。其架构分为两部分：前台交互模型以200毫秒为节点处理输入并维持用户&quot;在场感&quot;，支持随时打断；后台推理模型则处理长程规划、工具调用等复杂任务。两者协同工作，最终呈现为一个既能实时交互又能处理重度任务的统一界面。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">08:39</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：邵猛 (@shao__meng)</span></div>
+          <a class="item-title" href="https://x.com/shao__meng/status/2053998536711405978" target="_blank" rel="noopener">Cursor集成Microsoft Teams提升办公效率</a>
+          <div class="item-summary">Cursor 在 Microsoft Teams 可用了
+
+最新集成方式有：Slack、Linear 和 Microsoft Teams
+
+如果你们公司在用微软产品体系，Microsoft Teams 还是必选项，这个集成比较实用，在这安装：
+https：//cursor.com/dashboard/integrations#integrations</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="paper">
+        <div class="item-time">08:27</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：Epoch AI (@EpochAIResearch)</span></div>
+          <a class="item-title" href="https://x.com/EpochAIResearch/status/2053995435870892048" target="_blank" rel="noopener">FrontierMath评测发现致命错误，将更新修正后分数</a>
+          <div class="item-summary">我们正在对FrontierMath的Tiers 1-4进行AI辅助审查。
+这已标记出约三分之一题目存在致命错误，
+且我们相信大多数标记是有效的。
+在完成全面人工审核后，
+我们将在修正的数据集上发布更新后的分数。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">08:23</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+          <a class="item-title" href="https://www.nytimes.com/2026/05/11/us/politics/google-hackers-attack-ai.html" target="_blank" rel="noopener">谷歌表示，犯罪黑客利用人工智能发现了一个重大的软件漏洞</a>
+          <div class="item-summary">谷歌披露，犯罪黑客利用人工智能技术发现并利用了一个重大的软件漏洞。该漏洞存在于广泛使用的开源软件中，可能导致大规模数据泄露或系统入侵。谷歌威胁分析小组追踪到此次攻击，并确认黑客借助AI工具显著提升了漏洞挖掘的效率与精准度。目前漏洞细节尚未公开，但相关软件维护方已发布安全更新。这一事件凸显了AI技术被恶意用于网络攻击的现实风险，对全球网络安全防御体系提出了新的挑战。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">07:18</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Hugging Face：Blog（RSS）</span></div>
+          <a class="item-title" href="https://huggingface.co/blog/amazon/foundation-model-building-blocks" target="_blank" rel="noopener">在AWS上进行基础模型训练与推理的核心构建模块</a>
+          <div class="item-summary">本文面向使用开源框架的机器学习工程师，阐述了AWS如何为大规模基础模型的全生命周期提供核心基础设施。其核心是三大紧密集成的组件：配备多代NVIDIA GPU（如H100、H200及新一代Blackwell B200/B300）的大显存加速计算实例；用于集体通信的高带宽、低延迟网络（节点内NVLink与节点间EFA）；以及可扩展的分布式存储。这些基础设施与Slurm/Kubernetes等资源编排系统、PyTorch/JAX等ML框架协同，共同支撑预训练、后训练和推理工作负载，</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">07:10</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/949/045.htm" target="_blank" rel="noopener">纳德拉出庭反击马斯克诉讼案：他明明有我的手机号，但从未抱怨过微软与 OpenAI 的合作</a>
+          <div class="item-summary">微软CEO纳德拉在马斯克诉OpenAI案中作证，反驳了马斯克关于OpenAI背离非营利初衷的指控。他出示了马斯克2016年的感谢邮件，证明其当时完全支持微软与OpenAI的合作，且微软为此承受了1500万美元亏损。纳德拉强调，双方一直保持沟通，但马斯克在合作深化期间从未提出抱怨，直至2024年才提起诉讼。他还将2023年OpenAI董事会解雇CEO奥尔特曼的事件评价为&quot;业余之举&quot;，并透露自己曾介入帮助奥尔特曼复职。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">04:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Luma AI (@LumaLabsAI)</span></div>
+          <a class="item-title" href="https://x.com/LumaLabsAI/status/2053941836402901409" target="_blank" rel="noopener">Luma Agents：从情绪板到完整广告的自动化创作</a>
+          <div class="item-summary">情绪板曾是最精彩的部分。如今它只是起点。
+
+上传你的参考素材。设定方向。Luma Agents 会将其从情绪板转化为完整的广告。
+
+生成广告 → http：//lumalabs.ai/app</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">04:45</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：OpenAI (@OpenAI)</span></div>
+          <a class="item-title" href="https://x.com/OpenAI/status/2053939702110269822" target="_blank" rel="noopener">推出Daybreak：网络安全前沿AI防御系统</a>
+          <div class="item-summary">推出Daybreak：面向网络防御者的前沿AI。
+
+Daybreak汇集了最强大的OpenAI模型、Codex以及我们的安全合作伙伴，以加速网络防御并持续保障软件安全。
+
+朝着安全团队能以防御所需速度行动的未来迈进一步。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">03:51</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：OpenAI Developers (@OpenAIDevs)</span></div>
+          <a class="item-title" href="https://x.com/OpenAIDevs/status/2053925962287583379" target="_blank" rel="noopener">Codex插件助力AI应用与智能体开发提速</a>
+          <div class="item-summary">Codex现可通过OpenAI Developers插件，帮助您利用OpenAI API更快地构建AI应用和智能体。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">02:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：Kim (@kimmonismus)</span></div>
+          <a class="item-title" href="https://x.com/kimmonismus/status/2053911732028907972" target="_blank" rel="noopener">Anthropic估值五日激增2000亿美元，营收呈指数级增长</a>
+          <div class="item-summary">人工智能公司Anthropic的市场隐含估值在短短五天内从1.2万亿美元飙升至1.4万亿美元，暴增2000亿美元。根据链上Pre-IPO交易数据，其估值自2025年10月以来已上涨1067%，近期24天内又录得40%的涨幅。这一惊人飙升的背景是公司年化收入的爆炸式增长：从2023年的1亿美元跃升至当前的450亿美元，仅过去12个月就增长了1400%。在Jupiter等链上平台交易的、由SPV风险敞口1：1支持的Pre-IPO工具，正实时反映市场对其IPO的估值预期。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">02:48</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Simon Willison 博客</span></div>
+          <a class="item-title" href="https://simonwillison.net/2026/May/11/llm-shebang" target="_blank" rel="noopener">在脚本的shebang行中使用LLM</a>
+          <div class="item-summary">本文介绍了一种创新方法，将LLM工具直接嵌入脚本的shebang行中执行指令。通过LLM的fragments模式，shebang行可执行简单任务，如生成SVG图像；使用-T选项能调用外部工具（如llm_time）创作包含当前时间的俳句；更复杂的是运行YAML模板，其中定义了Python函数作为工具进行数学计算，示例中演示了计算2344乘以5252加134的过程，并通过调试输出展示了分步结果，最终得到12，310，822。这展现了LLM作为脚本解释器的强大扩展性，能够支持从内容</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">02:43</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude Code：GitHub Releases（RSS）</span></div>
+          <a class="item-title" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.139" target="_blank" rel="noopener">Claude Code v2.1.139 版本更新</a>
+          <div class="item-summary">本次更新引入了多项新功能与优化。核心新增包括：集中管理会话的Agent视图（研究预览）、可设置目标并持续工作的`/goal`命令、实时调整滚轮速度的`/scroll-speed`命令，以及查看插件详情的`claude plugin details`命令。交互界面导航与控制能力得到增强。底层优化涵盖MCP服务器可获取`CLAUDE_PROJECT_DIR`环境变量、`/context all`的令牌估算会考虑模型分词器并显示舍入值。此外，修复了超过20项问题，如凭证死锁、内存无</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">02:06</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：MiniMax (@MiniMax_AI)</span></div>
+          <a class="item-title" href="https://x.com/MiniMax_AI/status/2053899661334003938" target="_blank" rel="noopener">旧金山AI模型开发者盛会周三举行</a>
+          <div class="item-summary">本周三在旧金山，与@vercel_dev、@AnthropicAI和@Kimi_Moonshot共同参与美国下一代模型盛会。
+
+每位参与者将获得$30 MiniMax API积分 + 大奖池。
+
+📅 5月13日 | 太平洋时间下午5：30 | 旧金山
+
+加入候补名单 → https：//luma.com/ttrgmjaf</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">01:34</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Replit (@Replit)</span></div>
+          <a class="item-title" href="https://x.com/Replit/status/2053891504989753817" target="_blank" rel="noopener">Replit推出并行代理 支持10个代理同时运行</a>
+          <div class="item-summary">认识Replit并行代理
+
+通过并行运行多达10个代理来加速构建
+
+每个代理都拥有您应用的独立副本
+它们在各自的计算机上工作
+然后以代理方式合并工作成果</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="paper">
+        <div class="item-time">01:30</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：Microsoft Research (@MSFTResearch)</span></div>
+          <a class="item-title" href="https://x.com/MSFTResearch/status/2053890478165147693" target="_blank" rel="noopener">智能体执行能力强但优化用户立场不足</a>
+          <div class="item-summary">通过SocialReasoning Bench测试发现，各模型呈现稳定模式--智能体能够胜任执行任务，但即便在明确要求优化用户利益的指令下，仍无法持续改善用户处境。https：//msft.it/6011vPOLF</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">01:30</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：PixVerse (@PixVerse_)</span></div>
+          <a class="item-title" href="https://x.com/PixVerse_/status/2053890377967620257" target="_blank" rel="noopener">用户展示PixVerse生成的高端时尚网格图像</a>
+          <div class="item-summary">用户通过引用推文展示了由GPT Image 2在PixVerse平台上生成的一组高端时尚编辑图像。该图像采用2行4列的网格布局，包含8个独立面板。每个面板均以不同鲜艳纯色或渐变背景呈现一位身着现代街头服饰的年轻男模特，搭配滑板、吉他等道具，并采用简洁的工作室布景。图像整体追求商业广告摄影风格，具有奢侈品品牌广告的美学质感，强调柔和灯光、清晰阴影、逼真皮肤和电影级质感，且不含任何文字或标识。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">01:27</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Gemini (@GeminiApp)</span></div>
+          <a class="item-title" href="https://x.com/GeminiApp/status/2053889747752190393" target="_blank" rel="noopener">个人智能助手定制专属旅行计划</a>
+          <div class="item-summary">Personal Intelligence 可帮助您打造完全个性化的旅行行程。
+
+它通过关联您 @Gmail、@GooglePhotos、@Google 搜索和 @YouTube 历史记录中的信息点来节省时间。
+
+您可随时选择要连接的应用程序并管理个性化设置 🧵</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">01:22</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude：Blog（网页）</span></div>
+          <a class="item-title" href="https://claude.com/blog/claude-platform-on-aws" target="_blank" rel="noopener">Anthropic在AWS上正式推出Claude平台</a>
+          <div class="item-summary">Anthropic公司正式在AWS上推出Claude平台，为AWS客户提供了通过其现有身份验证、账单及承诺消费抵扣使用完整Claude功能的新途径。该平台首次将全套Claude API功能引入AWS生态，新功能与原生API同日上线。平台包含Claude托管智能体、代码执行、文件API等多项核心功能，并支持最新模型。与Amazon Bedrock上的服务不同，此平台由Anthropic直接运营，数据在AWS边界外处理，适合需要完整平台体验的企业客户。服务将在多数AWS商业区域提</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">00:03</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Google AI for Developers (@googleaidevs)</span></div>
+          <a class="item-title" href="https://x.com/googleaidevs/status/2053868609747746897" target="_blank" rel="noopener">谷歌DeepMind与Coursera推出&quot;Gemini for Developers&quot;开发者专项课程</a>
+          <div class="item-summary">谷歌DeepMind与Coursera合作推出的&quot;Gemini for Developers&quot;专项课程现已开放注册。该课程旨在指导开发者利用Gemini模型构建可用于生产环境的AI解决方案。其核心涵盖三大模块：&quot;推理与行动&quot;使AI应用能推理并执行复杂任务；&quot;连接与自动化&quot;通过函数调用将Gemini与现实世界工具集成；&quot;规模化与信心&quot;则专注于构建、测试和部署可扩展的AI系统。课程强调超越单纯文本生成，实现实际任务的自动化与系统集成，助力开发者快速上手。</div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="dgroup">
+      <div class="dheader">昨天 <span class='dsub'>05月11日 周一</span></div>
+      <div class="ilist">
+      <div class="item" data-cats="tip">
+        <div class="item-time">23:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/949/032.htm" target="_blank" rel="noopener">菲尔兹奖得主亲测 ChatGPT 5.5 Pro：17 分钟出论文级成果，替学生拉响红色警报</a>
+          <div class="item-summary">菲尔兹奖得主 Timothy Gowers 测试 ChatGPT 5.5 Pro，AI 在 17 分钟内独立解决了一个加法数论公开难题，产出了博士论文级别的成果。整个过程无需数学指导，仅通过简单提示完成。Gowers 警告，若 AI 数学能力按此速度发展，将很快对数学研究领域构成危机，尤其冲击博士生培养。他呼吁数学系紧急应对，帮助学生寻找新出路。另一位菲尔兹奖得主陶哲轩则指出，人类数学家在 AI 时代的核心价值在于&quot;消化&quot;和深入理解证明。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">23:37</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：小北 (@frxiaobei)</span></div>
+          <a class="item-title" href="https://x.com/frxiaobei/status/2053861985008431398" target="_blank" rel="noopener">Anthropic开源金融AI全栈模板，定义行业落地新标准</a>
+          <div class="item-summary">Anthropic在GitHub开源了金融服务行业AI解决方案完整模板库，包含10个端到端智能体、7个垂直行业插件及11家主流金融数据商的MCP连接器，覆盖投研、投行、风控等核心工作流。该库提供了从个人插件到企业API的部署方式，支持集成至Microsoft 365及私有云。此举为金融AI落地提供了开箱即用的标准作业程序，与OpenAI的消费级路线形成鲜明对比，凸显了其深耕企业场景、通过开源构建行业生态的战略意图。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">23:30</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：MiniMax (@MiniMax_AI)</span></div>
+          <a class="item-title" href="https://x.com/MiniMax_AI/status/2053860184532066737" target="_blank" rel="noopener">MiniMax组建&quot;10x团队&quot;，邀请领域专家共推AI跨越式发展</a>
+          <div class="item-summary">MiniMax宣布成立&quot;10x团队&quot;，旨在邀请各领域深度专家共同推动人工智能实现十倍速进步。公司认为大模型已从演示阶段发展为真实生产力设施，而将顶尖领域人才引入模型研发能显著提升能力并产生实际影响。团队寻求的是坚信AI能加速自身领域发展的专家，他们将直接参与问题定义、评估构建及工作流设计，其成果将融入MiniMax模型并贡献于推动行业发展的开源基准。MiniMax提供全球竞争力的薪酬、股权及上海、北京、香港、旧金山、伦敦等多地办公选择，通过开放合作实现&quot;智能普及&quot;的使命。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">23:16</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：swyx (@swyx)</span></div>
+          <a class="item-title" href="https://x.com/swyx/status/2053856676969890189" target="_blank" rel="noopener">传奇总部&quot;Cog House&quot;首度公开：天才创始人Scott Wu与Cognition AI的崛起之路</a>
+          <div class="item-summary">推文首次公开了Cognition AI总部&quot;Cog House&quot;的内部影像。创始人Scott Wu是美国顶尖竞技程序员，自幼展现数学天赋，曾三获国际信息学奥赛金牌。2023年11月，他在母亲去世与Sam Altman被OpenAI解雇的同日创立Cognition，并预见到AI将发展为全天候工作的智能体。公司推出的AI软件工程师Devin虽初期表现不佳，但上线18个月内已实现4.45亿美元年化营收，客户包括美国陆军、高盛和梅赛德斯-奔驰，公司估值约250亿美元。Wu认为自己的使</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">23:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+          <a class="item-title" href="https://openai.com/signals/research/2026q1-update" target="_blank" rel="noopener">ChatGPT 在 2026 年初如何扩大应用范围</a>
+          <div class="item-summary">2026年第一季度，ChatGPT的用户采用率大幅上升，其中35岁以上用户群体的增长最为迅速，同时用户性别比例也趋于均衡。这表明以ChatGPT为代表的人工智能技术正加速融入主流社会，其应用范围已突破早期以年轻技术爱好者为主的局限，向更广泛、更多元化的普通用户群体拓展。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">22:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Runway：News（网页）</span></div>
+          <a class="item-title" href="https://runwayml.com/news/stop-writing-yaml-configuring-ml-systems-with-confingy" target="_blank" rel="noopener">告别编写YAML：使用confingy配置机器学习系统</a>
+          <div class="item-summary">Runway开源了Python库confingy，旨在解决机器学习系统配置的长期痛点。该库允许开发者用纯Python代码（支持懒加载、类型检查和序列化）替代传统YAML配置文件，从而摆脱YAML作为图灵完备领域特定语言所带来的维护困境。confingy无需重构现有代码，即可满足跟踪构造函数参数、避免实例化昂贵对象（如大语言模型）等核心需求，有效改善了因复杂YAML配置导致的无法跳转定义、类型提示失效和重构困难等开发体验问题。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">22:24</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：OpenRouter (@OpenRouter)</span></div>
+          <a class="item-title" href="https://x.com/OpenRouter/status/2053843701261025290" target="_blank" rel="noopener">帕累托代码以市场需求重塑模型选择</a>
+          <div class="item-summary">Pareto Code 是一种利用真实市场需求观察帕累托前沿的新方法
+
+DeepSeek V4 Pro 占据首位，其次是 GPT 5.4 Mini 和 Gemini 3.1 Pro https：//openrouter.ai/openrouter/pareto-code</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">22:18</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2053842082603937926" target="_blank" rel="noopener">兄弟们！这套结构，这个图理解后。GPT-Image-2 生图也就算是入门了吧。</a>
+          <div class="item-summary">推文介绍了一套提升AI生图质量的结构化提示词框架。其核心是&quot;结构越清晰，输出质量越好&quot;。框架将提示系统分解为几个关键模块：首先定义画幅与用途；其次明确主题与核心主体的位置、占比及情绪价值；接着通过视觉隐喻用具体元素象征抽象概念；然后选择如Apple风格等特定画面风格并强调干净、克制等视觉要求；最后规划包含主副标题、英文短句和关键词的文字系统，并列出应避免的限制元素。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">21:46</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：OpenRouter (@OpenRouter)</span></div>
+          <a class="item-title" href="https://x.com/OpenRouter/status/2053834087023133025" target="_blank" rel="noopener">AntLingAGI发布万亿参数模型Ring-2.6-1T</a>
+          <div class="item-summary">AntLingAGI发布了其万亿参数旗舰&quot;思考模型&quot;Ring-2.6-1T，该模型在5月15日前可通过OpenRouter免费使用。其核心特性包括可调节的思考强度，能动态平衡认知深度、token成本和执行速度；专为智能体优化，适用于高频工作流，提供快速的多步执行和工具调用；并具备深度思考能力，以应对严密的数学逻辑和科学研究任务。模型旨在满足实际生产环境中复杂任务的需求。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">21:21</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：小北 (@frxiaobei)</span></div>
+          <a class="item-title" href="https://x.com/frxiaobei/status/2053827716605169804" target="_blank" rel="noopener">AI工具批量生成知识产权申请材料引关注</a>
+          <div class="item-summary">知识产权全面沦陷。
+
+发明专利生成 skill
+https：//github.com/handsomestWei/patent-disclosure-skill
+
+软著生成 skill
+https：//github.com/Fokkyp/SoftwareCopyright-Skill
+
+设计专利/实用新型更容易，claude desgin/ image2</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">20:36</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Vista (@vista8)</span></div>
+          <a class="item-title" href="https://x.com/vista8/status/2053816596762968128" target="_blank" rel="noopener">3.3万星AI论文学习库，收录精选视频教程</a>
+          <div class="item-summary">一个在GitHub上获得3.3万星标的AI论文学习资源库，作者系统性地收集和整理了高质量的AI学习视频。资源主要来自YouTube和Bilibili平台，例如收录了李沐的论文精讲系列。所有内容已按时间和主题进行了详细分类，便于用户系统学习和收藏。该库旨在为学习者提供一个结构化的视频学习路径。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="paper">
+        <div class="item-time">19:07</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2053794010582683759" target="_blank" rel="noopener">小块有大智慧？这下真成真了！</a>
+          <div class="item-summary">一项新研究证明，一个通过强化学习训练的7B语言模型能够有效指挥GPT-5、Claude Sonnet 4和Gemini 2.5 Pro等前沿大模型。该模型通过编写自然语言子任务、分配给不同大模型执行，并精确指定上下文信息，在GPQA Diamond、LiveCodeBench和AIME25等硬核基准测试中，其性能全面超越了单个前沿模型。该系统平均每个问题仅需调用约三次大模型，比手动设计的多代理流程更高效。该工作提供了关键证据，表明目前商业AI产品中依赖人工的提示工程和流程设计</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">18:21</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：商汤 SenseTime (@SenseTime_AI)</span></div>
+          <a class="item-title" href="https://x.com/SenseTime_AI/status/2053782644492525847" target="_blank" rel="noopener">SenseNova U1图像生成模型登陆ComfyUI平台</a>
+          <div class="item-summary">SenseNova U1图像生成模型现已在ComfyUI上可运行，并获得包括REBEL AI在内的评测者高度认可。REBEL AI发布的实践教程展示了该模型的部署工作流，并对其图像生成能力进行了真实场景测试。模型支持8步快速推理，生成速度极快，应用场景涵盖人像、超现实艺术、文字标志和生物设计等。相关资源已在Hugging Face、GitHub和Discord平台开放。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">17:38</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：腾讯混元 (@TencentHunyuan)</span></div>
+          <a class="item-title" href="https://x.com/TencentHunyuan/status/2053771684482851255" target="_blank" rel="noopener">腾讯混元Hy3预览版发布，专注复杂智能体任务</a>
+          <div class="item-summary">腾讯混元Hy3预览版已开放早期体验，被描述为该系列最强模型。其核心设计面向现实世界有效性，而非单纯追求基准测试分数。模型具备处理复杂智能体任务的能力，采用256K上下文长度，并融合了快慢思维机制的混合专家架构。该模型基于重建的预训练和强化学习基础设施构建，旨在实现大规模应用下的高成本效益。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">15:55</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：PixVerse (@PixVerse_)</span></div>
+          <a class="item-title" href="https://x.com/PixVerse_/status/2053745705618170030" target="_blank" rel="noopener">高效AI工作流：结合ChatGPT与PixVerse精准生成品牌香水广告</a>
+          <div class="item-summary">用户分享了一个高效AI视频创作流程。他首先利用ChatGPT，基于预设镜头描述，生成了一个结构严谨、支持多镜头序列的详细视频提示词。该提示词严格指定了品牌元素（如瓶身、包装、Logo及阿拉伯文/英文文本）需通过参考附件精确还原，并描述了超奢华、电影感的视觉风格。随后，他将此提示词输入PixVerse平台，借助其高速生成优势，快速产出了1080p分辨率的视频。此工作流有效结合了GPT的精准指令生成能力与PixVerse的快速视频渲染能力，实现了对品牌视觉的严格把控和高效率内容产</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">14:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+          <a class="item-title" href="https://openai.com/index/openai-launches-the-deployment-company" target="_blank" rel="noopener">OpenAI 推出 DeployCo 以协助企业围绕智能构建业务</a>
+          <div class="item-summary">OpenAI 正式推出全新企业部署公司 DeployCo，旨在帮助各类组织将前沿人工智能技术投入实际生产，并转化为可衡量的商业影响。该举措标志着 OpenAI 进一步深入企业服务领域，专注于解决 AI 模型从测试到规模化部署的落地挑战，助力企业通过定制化部署方案提升运营效率与业务成果。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">12:53</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：阿易 AI Notes (@AYi_AInotes)</span></div>
+          <a class="item-title" href="https://x.com/AYi_AInotes/status/2053699900727075150" target="_blank" rel="noopener">中国移动上线AI模型中转平台MoMA，国家队入局AI基础设施竞争</a>
+          <div class="item-summary">中国移动推出的AI模型中转平台MoMA，标志着&quot;国家队&quot;正式进入AI基础设施领域。该平台已接入DeepSeek、通义千问等300多个主流模型，并通过央视新闻进行宣传。其核心逻辑在于，AI中转站被视为未来AGI时代的&quot;智能电网&quot;，是掌握行业定价权与未来的关键。用户可在移动云官网搜索&quot;MoMA&quot;获取体验包，建议先行测试实际效果。此举意味着AI行业竞争已上升至基础设施层面。</div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="sec-trading">
+    <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-trading" onclick="filterCat(this)">🔥 全部热点</button><button class="cat-btn" data-filter="top" data-section="sec-trading" onclick="filterCat(this)">⭐ 顶级热点</button><button class="cat-btn" data-filter="ai_tech" data-section="sec-trading" onclick="filterCat(this)">🚀 AI/科技</button><button class="cat-btn" data-filter="geo" data-section="sec-trading" onclick="filterCat(this)">🎯 地缘政治</button><button class="cat-btn" data-filter="consumer" data-section="sec-trading" onclick="filterCat(this)">🏨 消费旅游</button><button class="cat-btn" data-filter="macro" data-section="sec-trading" onclick="filterCat(this)">📊 宏观利率</button><button class="cat-btn" data-filter="crypto" data-section="sec-trading" onclick="filterCat(this)">🪙 加密资产</button></div>
+        <div class="dgroup">
+      <div class="dheader">昨天 <span class='dsub'>05月11日 周一</span></div>
+      <div class="ilist">
+      <div class="item" data-cats="top ai_tech">
+        <div class="item-time">21:48</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">77分</span><span class="isrc">华尔街见闻</span><span class="ticker">$AMD</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771942" target="_blank" rel="noopener">美伊局势生变，美股盘初涨跌互现，英特尔、美光、高通、AMD股价齐创历史新高，现货白银涨7%站上85美元，布油再回100美元上方</a>
+          <div class="item-summary">美伊局势生变，美股盘初涨跌互现，英特尔等四大科技股齐创历史新高，布油重回100美元上方，现货白银涨7%。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$INTC<span class="tgt-reason">股价创新高</span></span><span class="tgt-item">$MU<span class="tgt-reason">股价创新高</span></span><span class="tgt-item">$QCOM<span class="tgt-reason">股价创新高</span></span><span class="tgt-item">$AMD<span class="tgt-reason">股价创新高</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo">
+        <div class="item-time">21:37</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">53分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772005" target="_blank" rel="noopener">美伊谈判深陷僵局：德黑兰称华盛顿坚持&quot;不合理要求&quot;，双方立场分歧难以弥合</a>
+          <div class="item-summary">美伊谈判陷入僵局，双方立场分歧难弥合；地区局势恶化，伊朗无人机袭击推高油价，全面冲突风险攀升。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$XOM<span class="tgt-reason">油价大幅上涨</span></span><span class="tgt-item">$CVX<span class="tgt-reason">油价大幅上涨</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">21:35</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">63分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772009" target="_blank" rel="noopener">MiniMax想寻找下一个“10倍”</a>
+          <div class="item-summary">MiniMax计划复制“ClaudeCode时刻”，寻找下一个能带来10倍增长的发展机会。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">21:25</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">45分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772007" target="_blank" rel="noopener">估值200亿美元？快手是否会分拆可灵AI</a>
+          <div class="item-summary">市场传闻快手可灵AI估值达200亿美元，但分拆需大量资金投入，目前相关计划尚未明确。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$KUAI<span class="tgt-reason">需大额资金投入</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="consumer">
+        <div class="item-time">20:43</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772003" target="_blank" rel="noopener">是否在合适时间再次提价？能否开设股东买酒专用通道？贵州茅台代总经理王莉回应</a>
+          <div class="item-summary">贵州茅台代总经理回应，将按“随行就市、相对平稳”原则动态调价，未提及股东买酒通道，重视渠道商合作。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">20:27</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772002" target="_blank" rel="noopener">英债遭抛售！斯塔默“救场演说”引发财政忧虑，30年期收益率重回高位</a>
+          <div class="item-summary">斯塔默“救场演说”未消市场忧虑，受党内挑战及财政不明影响，英债遭抛售，30年期收益率重回高位。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$EWU<span class="tgt-reason">英债抛售承压</span></span><span class="tgt-item">$HSBC<span class="tgt-reason">财政忧虑升温</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">20:22</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772000" target="_blank" rel="noopener">央行Q1货政报告专栏：未来国际收支有条件保持基本平衡，AI将赋能经济高质量发展</a>
+          <div class="item-summary">央行Q1货政报告称将健全“双支柱”调控框架，展望未来国际收支有望基本平衡，AI将为经济高质量发展注入动能。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$NVDA<span class="tgt-reason">AI赋能经济</span></span><span class="tgt-item">$MSFT<span class="tgt-reason">AI赋能经济</span></span><span class="tgt-item">$GOOGL<span class="tgt-reason">AI赋能经济</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">20:15</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772001" target="_blank" rel="noopener">“最直爽”城商行长在会上讲了什么？直击重庆银行业绩会</a>
+          <div class="item-summary">重庆银行业绩会上，行长高嵩直言该行业绩仍留有后劲，展现出后续发展的潜在空间。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">20:05</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">63分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/premium/articles/3771986?layout=wscn-layout" target="_blank" rel="noopener">中国出口新阶段：AI超级周期与“新三样”大超预期！有望重塑全球贸易格局</a>
+          <div class="item-summary">AI超级周期与新能源转型共振，中国出口迈向高技术资本品主导新阶段，有望重塑全球贸易格局。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">20:01</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">60分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771999" target="_blank" rel="noopener">台积电封装垄断格局悄然松动：SK海力士联手英特尔测试EMIB技术，AI芯片供应链或迎重大变局</a>
+          <div class="item-summary">台积电CoWoS封装产能紧张，SK海力士联手英特尔测试EMIB技术，谷歌也考虑采用，AI芯片供应链或迎变局，量产良率成关键。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$TSM<span class="tgt-reason">垄断格局松动；利好|$INTC:技术获应用</span></span><span class="tgt-item">$SKHY<span class="tgt-reason">合作拓业务</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo">
+        <div class="item-time">19:52</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">63分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771998" target="_blank" rel="noopener">中国央行Q1货币政策执行报告：继续实施好适度宽松的货币政策，密切关注外部输入型通胀影响</a>
+          <div class="item-summary">中国央行Q1报告称将继续实施适度宽松货币政策，密切关注中东地缘事件引发的外部输入型通胀影响。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$XOM<span class="tgt-reason">需求预期提振</span></span><span class="tgt-item">$CVX<span class="tgt-reason">需求预期提振</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">19:41</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">60分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771997" target="_blank" rel="noopener">Circle Q1营收同比增20%至6.94亿美元，净利同比降低15%，USDC流通量同比增28%｜财报见闻</a>
+          <div class="item-summary">Circle Q1营收同比增20%至6.94亿美元，净利因股票薪酬等费用大增降15%，USDC流通量增28%，公司维持全年指引。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$CRCL<span class="tgt-reason">营收流通量双增</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">19:19</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771996" target="_blank" rel="noopener">AI下半场，最大的赢家依然是台积电？</a>
+          <div class="item-summary">台积电凭借垄断优势成为AI竞争核心受益者，虽短期面临量产及海外建厂压力，但高产能利用率驱动毛利扩张，今年营收增速预计超30%，估值优势显著。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$TSM<span class="tgt-reason">AI核心受益</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">18:53</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">49分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771992" target="_blank" rel="noopener">中国Token出海：调用量超过美国 但电力不是唯一的护城河</a>
+          <div class="item-summary">中国大模型周token调用量已超美国四倍，优势源于人才、开源等协同效应，华人工程师能力为核心，靠系统性产业链优势出海。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">18:26</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771987" target="_blank" rel="noopener">怎么看初步抬升的通胀数据</a>
+          <div class="item-summary">广发宏观郭磊称4月PPI同比2.8%超预期，物价中枢抬升受经济修复与油价上行推动，当前通胀对宏观面影响偏积极。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$BABA<span class="tgt-reason">国内经济修复</span></span><span class="tgt-item">$XOM<span class="tgt-reason">通胀推升价涨</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">18:19</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771968" target="_blank" rel="noopener">9倍狂飙、净利润超三星 — 海力士是怎么从&quot;接近破产&quot;变成全球最赚钱芯片公司的？</a>
+          <div class="item-summary">海力士耗时17年从接近破产逆袭，如今季度利润率超英伟达、净利润超三星，成全球最赚钱芯片公司。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$HYNX<span class="tgt-reason">业绩大幅飙升</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="top macro">
+        <div class="item-time">17:56</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">65分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771983" target="_blank" rel="noopener">沃什首秀前，高盛推迟美联储降息预期至12月</a>
+          <div class="item-summary">沃什履新前，高盛将美联储降息预期推迟至2026年12月及2027年3月，因能源与AI推升核心PCE，经济衰退概率下调。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$无具体标的<span class="tgt-reason">利率更高更久</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo">
+        <div class="item-time">17:32</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771985" target="_blank" rel="noopener">伊朗：谈判优先事项是结束战争，浓缩铀问题适时作出决定</a>
+          <div class="item-summary">美伊谈判陷入僵局，伊朗坚持优先停战、解除制裁并掌控霍尔木兹海峡，未提核问题具体方案，特朗普拒绝其方案。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">16:33</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">50分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771947" target="_blank" rel="noopener">沪指站上4200点创近11年新高，科创50创历史新高，芯片、半导体集体爆发、千亿巨头狂拉</a>
+          <div class="item-summary">沪指站上4200点创近11年新高，科创50破历史纪录，芯片半导体领涨，两市成交额连续四日超3万亿。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$NVDA<span class="tgt-reason">半导体板块爆发</span></span><span class="tgt-item">$AMD<span class="tgt-reason">半导体板块爆发</span></span><span class="tgt-item">$INTC<span class="tgt-reason">半导体板块爆发</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="consumer">
+        <div class="item-time">16:23</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">57分</span><span class="isrc">华尔街见闻</span><span class="ticker">$RTX</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3771979" target="_blank" rel="noopener">英特尔陈立武为黄仁勋授博士帽，同步爆料：正与英伟达合作“令人兴奋的新产品”</a>
+          <div class="item-summary">英特尔与英伟达达成深度合作，英伟达斥50亿美元入局，覆盖多领域，正重塑AI时代的算力版图。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$INTC<span class="tgt-reason">联手英伟达</span></span><span class="tgt-item">$NVDA<span class="tgt-reason">联手英特尔</span></span></span></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+function switchSection(name,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('ai','tr'));
+  document.getElementById('sec-'+name).classList.add('active');
+  el.classList.add(name==='aihot'?'ai':'tr');
+  window.scrollTo(0,0);
+}
+function filterCat(btn){
+  var secId=btn.dataset.section;
+  var filter=btn.dataset.filter;
+  var sec=document.getElementById(secId);
+  sec.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  sec.querySelectorAll('.item').forEach(function(item){
+    var cats=item.dataset.cats||'';
+    var show=(filter==='all'||cats.split(' ').indexOf(filter)!==-1);
+    item.style.display=show?'':'none';
+  });
+  sec.querySelectorAll('.dgroup').forEach(function(g){
+    var any=false;
+    g.querySelectorAll('.item').forEach(function(i){if(i.style.display!=='none')any=true;});
+    g.style.display=any?'':'none';
+  });
+}
+</script>
+</body>
+</html>
