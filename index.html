@@ -106,7 +106,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 <body>
 <aside class="sb">
   <div class="sb-logo">💰 财神爷 <span>News</span>
-    <div class="sb-up">更新 2026-05-14 11:00</div>
+    <div class="sb-up">更新 2026-05-14 12:00</div>
   </div>
   <nav class="sb-nav">
     <div class="nav-lbl">精选频道</div>
@@ -137,12 +137,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
     <div class="dgroup">
       <div class="dheader">今天 <span class='dsub'>05月14日 周四</span></div>
       <div class="ilist">
+      <div class="item" data-cats="paper">
+        <div class="item-time">11:06</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">CMU：Machine Learning Blog</span></div>
+          <a class="item-title" href="https://blog.ml.cmu.edu/2026/05/13/teaching-vision-language-models-to-speak-cinema" target="_blank" rel="noopener">教视觉-语言模型说&quot;电影语言&quot;</a>
+          <div class="item-summary">研究团队与百余名专业创作者历时一年，构建了一个视频描述生成流程，其核心在于扩展精细化的人类-AI协同监督，而非单纯扩大模型规模。该研究（入选CVPR 2026亮点论文）指出，当前主流视频生成模型在理解和生成具有电影感的专业运镜（如希区柯克式滑动变焦、精确的焦点转移或荷兰角镜头）时存在明显不足，常产出通用或焦点错误的画面。这项工作揭示了一条通过提升监督质量来增强模型&quot;电影语言&quot;表达能力的新路径。</div>
+        </div>
+      </div>
+
       <div class="item" data-cats="tip">
         <div class="item-time">10:55</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Vista (@vista8)</span></div>
           <a class="item-title" href="https://x.com/vista8/status/2054757474100760626" target="_blank" rel="noopener">开源项目OpenSquilla：智能路由与本地检索，大幅降低LLM使用成本</a>
           <div class="item-summary">开源项目OpenSquilla针对大语言模型应用Token消耗过高的问题，提出了智能模型路由与本地向量检索相结合的解决方案。系统能自动判断任务复杂度，将简单问题路由至廉价模型，复杂任务则分配给更强模型，且路由决策在本地完成，不消耗Token。通过增量发送与缓存命中机制，实际传输Token减少了90%以上。其记忆系统能在上下文将满时自动筛选并压缩关键信息，支持混合检索。项目还具备成本统计、安全沙箱、支持OpenClaw一键迁移及定时任务等功能，显著提升了使用效率与经济性。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="paper">
+        <div class="item-time">10:48</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
+          <a class="item-title" href="https://x.com/SiliconFlowAI/status/2054755824309076359" target="_blank" rel="noopener">NousResearch推出Token Superposition Training技术，显著加速大语言模型预训练</a>
+          <div class="item-summary">NousResearch发布了Token Superposition Training（TST），这是一种改进标准大语言模型预训练流程的方法。该技术无需改变模型架构、优化器、分词器或训练数据，即可在相同计算量（FLOPs）下实现2-3倍的训练时间加速。其核心是在训练的前三分之一阶段，让模型读取并预测连续的token包，对输入嵌入进行平均，并使用改进的交叉熵损失预测下一个token包；剩余训练时间则恢复为标准的下一个token预测。推理阶段的模型与传统预训练产生的模型完全相同。</div>
         </div>
       </div>
 
@@ -528,26 +546,6 @@ https：//suno.com/playlist/a255cf6d-bb99-4c1f-aedd-8d584579bddb</div>
           <div class="item-summary">BenchLoop 提供了一套对本地大模型进行基准测试的标准化流程。用户只需拉取模型并运行该工具，即可实时获取模型在质量、速度和可靠性方面的综合评分。平台支持对比不同提示框架（如原生模式与 Hermes 模式）下的性能表现。测试完成后，结果可自动发布至公开排行榜，便于横向比较不同模型的优劣。</div>
         </div>
       </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">09:26</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span></div>
-          <a class="item-title" href="https://x.com/alibaba_cloud/status/2054372732234797342" target="_blank" rel="noopener">AI未来原生智能体 Qwen 3.6 Plus限免</a>
-          <div class="item-summary">AI的未来是智能体原生的。
-很高兴能与Hermes Agent及@NousResearch社区共同开启这段旅程。
-Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">08:39</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：邵猛 (@shao__meng)</span></div>
-          <a class="item-title" href="https://x.com/shao__meng/status/2054360963571446232" target="_blank" rel="noopener">Google 发布首款 AI 优先笔记本 Googlebook，集成 Gemini 智能</a>
-          <div class="item-summary">Google 正式推出首款为 Gemini Intelligence 设计的笔记本 Googlebook，标志着从&quot;云优先&quot;的 Chromebook 时代进入&quot;AI 优先&quot;新阶段。其核心创新包括：Magic Pointer 将系统光标变为 AI 交互入口，可直接触发上下文建议与任务；Create Your Widget 允许通过自然语言生成聚合多源信息的动态桌面小组件；深度整合 Android 生态，实现手机 App 无缝调用与文件跨设备快速访问。该产品以 Gemini 为核</div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
@@ -556,7 +554,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         <div class="dgroup">
       <div class="dheader">昨天 <span class='dsub'>05月13日 周三</span></div>
       <div class="ilist">
-      <div class="item" data-cats="crypto top">
+      <div class="item" data-cats="top crypto">
         <div class="item-time">04:56</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">72分</span><span class="isrc">The Block</span><span class="ticker">$C</span><span class="ticker">$COIN</span></div>
@@ -566,7 +564,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="top macro">
+      <div class="item" data-cats="macro top">
         <div class="item-time">04:55</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">77分</span><span class="isrc">华尔街见闻</span></div>
@@ -576,7 +574,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="crypto top ai_tech">
+      <div class="item" data-cats="top ai_tech crypto">
         <div class="item-time">04:46</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">68分</span><span class="isrc">Decrypt</span><span class="ticker">$F</span></div>
@@ -616,7 +614,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="geo top">
+      <div class="item" data-cats="top geo">
         <div class="item-time">04:14</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">华尔街见闻</span></div>
@@ -626,7 +624,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="crypto top ai_tech">
+      <div class="item" data-cats="top ai_tech crypto">
         <div class="item-time">03:45</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">69分</span><span class="isrc">Decrypt</span><span class="ticker">$BTC</span><span class="ticker">$MARA</span></div>
@@ -646,7 +644,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="geo top">
+      <div class="item" data-cats="top geo">
         <div class="item-time">02:43</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">72分</span><span class="isrc">CNBC Top News</span><span class="ticker">$C</span></div>
@@ -666,7 +664,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="geo top">
+      <div class="item" data-cats="top geo">
         <div class="item-time">02:11</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">72分</span><span class="isrc">CNBC Top News</span><span class="ticker">$C</span></div>
@@ -676,7 +674,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="geo top macro">
+      <div class="item" data-cats="macro top geo">
         <div class="item-time">02:10</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">72分</span><span class="isrc">CNBC Top News</span><span class="ticker">$C</span></div>
@@ -696,7 +694,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="top macro">
+      <div class="item" data-cats="macro top">
         <div class="item-time">01:33</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">71分</span><span class="isrc">CNBC Markets</span><span class="ticker">$F</span></div>
@@ -716,7 +714,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="top macro">
+      <div class="item" data-cats="macro top">
         <div class="item-time">00:38</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">CNBC Top News</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
@@ -740,7 +738,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="crypto top">
+      <div class="item" data-cats="top crypto">
         <div class="item-time">22:37</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">70分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
@@ -750,7 +748,7 @@ Qwen 3.6 Plus现于Nous Portal限时免费--快来尝试吧。⚡</div>
         </div>
       </div>
 
-      <div class="item" data-cats="crypto top">
+      <div class="item" data-cats="top crypto">
         <div class="item-time">19:55</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">75分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
