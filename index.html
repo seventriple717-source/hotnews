@@ -106,12 +106,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 <body>
 <aside class="sb">
   <div class="sb-logo">💰 财神爷 <span>News</span>
-    <div class="sb-up">更新 2026-05-14 13:00</div>
+    <div class="sb-up">更新 2026-05-15 12:04</div>
   </div>
   <nav class="sb-nav">
     <div class="nav-lbl">精选频道</div>
     <div class="nav-item ai" onclick="switchSection('aihot',this)">
-      <span class="ndot ndot-ai"></span>AI Hot<span class="ncount">39</span>
+      <span class="ndot ndot-ai"></span>AI Hot<span class="ncount">40</span>
     </div>
     <div class="nav-item" onclick="switchSection('trading',this)">
       <span class="ndot ndot-tr"></span>Trading Hot<span class="ncount">20</span>
@@ -122,421 +122,409 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="section active" id="sec-aihot">
     <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-aihot" onclick="filterCat(this)">🔥 全部精选</button><button class="cat-btn" data-filter="ai-models" data-section="sec-aihot" onclick="filterCat(this)">🤖 模型发布</button><button class="cat-btn" data-filter="ai-products" data-section="sec-aihot" onclick="filterCat(this)">🚀 产品更新</button><button class="cat-btn" data-filter="industry" data-section="sec-aihot" onclick="filterCat(this)">🏭 行业动态</button><button class="cat-btn" data-filter="paper" data-section="sec-aihot" onclick="filterCat(this)">📄 论文研究</button><button class="cat-btn" data-filter="tip" data-section="sec-aihot" onclick="filterCat(this)">💡 技巧观点</button></div>
         <div class="dgroup">
-      <div class="dheader">今天 <span class='dsub'>05月14日 周四</span></div>
+      <div class="dheader">今天 <span class='dsub'>05月15日 周五</span></div>
       <div class="ilist">
-      <div class="item" data-cats="tip">
-        <div class="item-time">11:38</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：宝玉 (@dotey)</span></div>
-          <a class="item-title" href="https://x.com/dotey/status/2054768295534846239" target="_blank" rel="noopener">微信群聊总结Skill新增，依赖wx-cli配置</a>
-          <div class="item-summary">baoyu-skills 新加了一个 Skill：
-微信群聊总结 Skill：https：//github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-wechat-summary
-
-依赖于 wx-cli：https：//github.com/jackwener/wx-cli
-如何配置使用 wx-cli 请看项目文档，无法提供帮助。另外目前只是借助其读取数据，其他没任何关系。
-
-Claude Code + Claude Opu</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="paper">
-        <div class="item-time">11:06</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">CMU：Machine Learning Blog</span></div>
-          <a class="item-title" href="https://blog.ml.cmu.edu/2026/05/13/teaching-vision-language-models-to-speak-cinema" target="_blank" rel="noopener">教视觉-语言模型说&quot;电影语言&quot;</a>
-          <div class="item-summary">研究团队与百余名专业创作者历时一年，构建了一个视频描述生成流程，其核心在于扩展精细化的人类-AI协同监督，而非单纯扩大模型规模。该研究（入选CVPR 2026亮点论文）指出，当前主流视频生成模型在理解和生成具有电影感的专业运镜（如希区柯克式滑动变焦、精确的焦点转移或荷兰角镜头）时存在明显不足，常产出通用或焦点错误的画面。这项工作揭示了一条通过提升监督质量来增强模型&quot;电影语言&quot;表达能力的新路径。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">10:55</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Vista (@vista8)</span></div>
-          <a class="item-title" href="https://x.com/vista8/status/2054757474100760626" target="_blank" rel="noopener">开源项目OpenSquilla：智能路由与本地检索，大幅降低LLM使用成本</a>
-          <div class="item-summary">开源项目OpenSquilla针对大语言模型应用Token消耗过高的问题，提出了智能模型路由与本地向量检索相结合的解决方案。系统能自动判断任务复杂度，将简单问题路由至廉价模型，复杂任务则分配给更强模型，且路由决策在本地完成，不消耗Token。通过增量发送与缓存命中机制，实际传输Token减少了90%以上。其记忆系统能在上下文将满时自动筛选并压缩关键信息，支持混合检索。项目还具备成本统计、安全沙箱、支持OpenClaw一键迁移及定时任务等功能，显著提升了使用效率与经济性。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="paper">
-        <div class="item-time">10:48</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
-          <a class="item-title" href="https://x.com/SiliconFlowAI/status/2054755824309076359" target="_blank" rel="noopener">NousResearch推出Token Superposition Training技术，显著加速大语言模型预训练</a>
-          <div class="item-summary">NousResearch发布了Token Superposition Training（TST），这是一种改进标准大语言模型预训练流程的方法。该技术无需改变模型架构、优化器、分词器或训练数据，即可在相同计算量（FLOPs）下实现2-3倍的训练时间加速。其核心是在训练的前三分之一阶段，让模型读取并预测连续的token包，对输入嵌入进行平均，并使用改进的交叉熵损失预测下一个token包；剩余训练时间则恢复为标准的下一个token预测。推理阶段的模型与传统预训练产生的模型完全相同。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">10:24</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
-          <a class="item-title" href="https://x.com/berryxia/status/2054749585520890314" target="_blank" rel="noopener">UnslothAI发布Qwen3.6 MTP GGUF模型，实现推理速度大幅提升</a>
-          <div class="item-summary">UnslothAI创始人Daniel Han发布了实验性的Qwen3.6 MTP GGUF模型，显著提升了推理速度。其中，27B模型在单GPU上达到每秒140个token，35B-A3B版本更是高达每秒220个token，相比原版GGUF速度提升超过1.4倍且精度无损。关键优化在于将draft tokens设置为2，这是性能与接受率的最佳平衡点。这项MTP投机解码技术极大提升了消费级显卡运行大模型的效率，推动了本地AI的性能边界。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">09:19</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
-          <a class="item-title" href="https://x.com/berryxia/status/2054733412846690443" target="_blank" rel="noopener">Moonshot AI创始人杨植麟最近放出了一个40分钟视频</a>
-          <div class="item-summary">杨植麟在视频中拆解Kimi K2模型的训练，仅花费460万美元便在编程大战中击败GPT-5.5等对手。其通过极致优化、线性注意力等架构创新，抹平资源差距，标志AI竞赛规则改变，小团队以聪明设计颠覆大厂传统玩法。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">07:19</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude Code：GitHub Releases（RSS）</span></div>
-          <a class="item-title" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.141" target="_blank" rel="noopener">Claude 工具 v2.1.141 版本更新</a>
-          <div class="item-summary">Claude 工具发布 v2.1.141 版本，带来多项功能新增与优化。主要更新包括：为钩子输出添加 `terminalSequence` 字段以支持无控制终端的桌面通知；新增 `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` 环境变量，便于通过 HTTPS 克隆插件源码；引入 `ANTHROPIC_WORKSPACE_ID` 变量以在多工作区联盟中限定令牌范围。会话管理方面，`claude agents` 命令新增 `--cwd` 参数用于按目录筛选，并优</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">07:15</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：洪明 (@hongming731)</span></div>
-          <a class="item-title" href="https://x.com/hongming731/status/2054701978924859865" target="_blank" rel="noopener">BestBlogs早报：AI智能体工程化实战与安全架构</a>
-          <div class="item-summary">BestBlogs早报聚焦AI智能体的工程化落地。Anthropic官方指南详解Claude Computer Use最佳实践，包括解决点击偏移的根本原因、推荐分辨率策略及必须采用虚拟机隔离与人工确认门控的安全原则。OpenAI工程师分享了为Codex构建Windows安全沙箱的历程，其最终方案通过专属安全标识符和写受限令牌，实现了操作系统层面的强制文件系统隔离。早报同时指出，基准测试优异的RAG Agent在生产环境中可能出现高达30%的幻觉率。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="paper">
-        <div class="item-time">04:42</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">Berkeley RDI：Blog（AI 安全与评测）</span></div>
-          <a class="item-title" href="https://rdi.berkeley.edu/blog/exploitgym" target="_blank" rel="noopener">ExploitGym：AI智能体能否将安全漏洞转化为真实攻击？</a>
-          <div class="item-summary">由伯克利RDI、马克斯·普朗克安全与隐私研究所、Anthropic、OpenAI及谷歌等机构研究人员组成的团队，发布了名为ExploitGym的新基准测试。该测试包含898个真实漏洞，要求AI智能体根据漏洞描述生成完整的漏洞利用程序。结果显示，前沿AI模型已能成功利用相当数量的漏洞，即使在启用ASLR等标准防御措施后，部分攻击仍能成功。这证明AI已具备自主将漏洞转化为实际攻击的能力，该技术具有双重用途：既可帮助防御者评估漏洞严重性，也可能降低攻击者的技术门槛。</div>
-        </div>
-      </div>
-
       <div class="item" data-cats="ai-models">
-        <div class="item-time">04:00</div>
+        <div class="item-time">10:33</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span></div>
-          <a class="item-title" href="https://x.com/alibaba_cloud/status/2054653031472414864" target="_blank" rel="noopener">AI角色实现记忆共情与主动交互</a>
-          <div class="item-summary">如果AI角色能够记忆、共情并主动交互呢？✨
-
-交互式AI的未来已来。无论您是为游戏、虚拟AI伴侣还是自适应学习进行开发，Qwen-Character都能打造沉浸式角色扮演体验，推动参与度加深50%以上并提升用户终身价值
-
-👉 观看完整视频了解运作原理：https：//int.alibabacloud.com/m/1000412854/
-
-#AlibabaCloud #Qwen #QwenCharacter #ModelStudio #AI</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">03:29</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Claude：Blog（网页）</span></div>
-          <a class="item-title" href="https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude" target="_blank" rel="noopener">Claude 电脑与浏览器使用的最佳实践</a>
-          <div class="item-summary">Claude 最新模型在电脑与浏览器使用能力上显著提升，支持构建复杂智能体系统。本文针对Claude 4.6系列和Opus 4.7提供实践指南，重点优化截图分辨率：Claude 4.6系列API限制最大长边1568像素、总像素115万；Opus 4.7提升至最大长边2576像素、总像素375万。发送前将截图缩放到限制内是提升点击准确性的最有效方法。推荐起始分辨率为1280x720，Opus 4.7用户可优先使用1080p，并避免发送未经缩放的原始截图或过低分辨率图像。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">03:07</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Claude Devs (@ClaudeDevs)</span></div>
-          <a class="item-title" href="https://x.com/ClaudeDevs/status/2054639777685934564" target="_blank" rel="noopener">Claude代码周限额提升50%</a>
-          <div class="item-summary">Claude代码周限额正在提升50%，即日起持续至7月13日。
-
-现已面向所有Pro、Max、Team及按席位计费的企业用户生效。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">02:42</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：可灵 Kling AI (@Kling_ai)</span></div>
-          <a class="item-title" href="https://x.com/Kling_ai/status/2054633446002377084" target="_blank" rel="noopener">AI电影大师Gossip Goblin创作流程首度揭秘</a>
-          <div class="item-summary">又一篇来自@PJaccetturo的精彩解析！
-查看完整推文，了解@Gossip_Goblin这部主要使用Kling制作动画的杰作！</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">02:31</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Krea AI (@krea_ai)</span></div>
-          <a class="item-title" href="https://x.com/krea_ai/status/2054630514439696401" target="_blank" rel="noopener">Krea 2 新增情绪板分享功能</a>
-          <div class="item-summary">推出情绪板分享功能。
-
-现在你可以与他人分享 Krea 2 情绪板。
-
-下方有几个可供尝试的示例 👇</div>
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">蚂蚁 inclusionAI：HuggingFace 新模型</span></div>
+          <a class="item-title" href="https://huggingface.co/inclusionAI/ARGenSeg-8B" target="_blank" rel="noopener">inclusionAI/ARGenSeg-8B</a>
+          <div class="item-summary">包容性AI团队发布ARGenSeg-8B模型，致力于通过开源和开放科学推动人工智能的进步与普及。该举措强调技术民主化，使更广泛的社区能够参与AI研发与应用。开源策略将促进协作创新，加速AI工具在多元场景中的落地，降低技术门槛，推动产业生态的开放发展。</div>
         </div>
       </div>
 
       <div class="item" data-cats="industry">
-        <div class="item-time">02:23</div>
+        <div class="item-time">10:27</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">The Decoder：AI News（RSS）</span></div>
-          <a class="item-title" href="https://the-decoder.com/anthropic-overtakes-openai-in-b2b-adoption-for-the-first-time-according-to-ramp-spending-data" target="_blank" rel="noopener">Anthropic 首次在 B2B 采用率上超越 OpenAI，Ramp 支出数据显示</a>
-          <div class="item-summary">根据 Ramp AI 指数数据，Anthropic 在美国企业客户中的采用率达到 34.4%，首次超越 OpenAI 的 32.3%。其业务覆盖范围在一年内增长了四倍。但文章指出，三个因素可能使其领先优势迅速减弱。</div>
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/950/728.htm" target="_blank" rel="noopener">为 OpenAI 累计投入超 1000 亿美元，纳德拉称微软当年投资时&quot;没人愿意下注&quot;</a>
+          <div class="item-summary">在&quot;马斯克诉奥尔特曼&quot;庭审中，微软企业发展负责人确认，微软对OpenAI的累计投入已超过1000亿美元，其中包括130亿美元原始投资及大量Azure基础设施成本。此次合作已为微软带来约300亿美元营收。CEO纳德拉表示，微软是在&quot;没人愿意下注&quot;时承担了风险。双方已续签非独家协议，微软不再支付收入分成，并将OpenAI的分成上限设为到2030年累计380亿美元，此举较原协议节省约970亿美元。此外，微软正评估收购AI初创公司以补强人才，并调整资源投向自研模型与超级智能领域。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">09:30</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">Anthropic：Newsroom（网页）</span></div>
+          <a class="item-title" href="https://www.anthropic.com/news/pwc-expanded-partnership" target="_blank" rel="noopener">普华永道全球部署Claude，助力客户构建技术、执行交易并重塑企业职能</a>
+          <div class="item-summary">普华永道与Anthropic宣布扩大战略联盟，将在全球数十万员工中部署Claude AI工具。双方将联合建立卓越中心，并培训认证3万名专业人员。合作聚焦三大高杠杆领域：智能体技术构建、AI原生交易执行以及企业职能重塑。普华永道已率先成立基于Claude的财务业务组。实际应用显示，Claude在保险承保、网络安全等多个领域能将交付时间缩短最高达70%，例如将保险承保周期从十周压缩至十天。</div>
         </div>
       </div>
 
       <div class="item" data-cats="tip">
-        <div class="item-time">01:34</div>
+        <div class="item-time">09:25</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：阿易 AI Notes (@AYi_AInotes)</span></div>
-          <a class="item-title" href="https://x.com/AYi_AInotes/status/2054616319127904403" target="_blank" rel="noopener">Meta首席AI官官宣WhatsApp和Meta AI推出Incognito Chat</a>
-          <div class="item-summary">Meta首席AI官宣布，Incognito Chat功能正式登陆WhatsApp和Meta AI。与ChatGPT等仅不保存历史记录的&quot;临时聊天&quot;不同，该功能的关键创新在于：对话推理完全在用户手机的硬件安全飞地内进行，Meta工程师无法获取明文，且不产生任何服务器日志，会话结束后数据永久消失。此举将WhatsApp成熟的端到端加密标准应用于AI对话，旨在彻底解决用户对隐私的顾虑，从而鼓励用户与AI讨论健康、财务等敏感话题。作者认为，通过建立深度信任来获取用户更真实的promp</div>
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：宝玉 (@dotey)</span></div>
+          <a class="item-title" href="https://x.com/dotey/status/2055097242755706984" target="_blank" rel="noopener">为什么资深开发者讲不清自己的专业能力</a>
+          <div class="item-summary">资深开发者与业务团队存在根本认知差异。业务团队生活在&quot;消除不确定性&quot;的循环中，追求快速试错验证，核心是速度。而资深开发者身处&quot;管理复杂性&quot;的循环，核心职责是保障付费服务的长期稳定，因此对增加系统复杂性的行为极为警惕。沟通失败在于，开发者用&quot;控制复杂性&quot;的理由拒绝需求，却未回应业务端&quot;消除不确定性&quot;的迫切诉求。解决方案是，开发者应将其精简需求、复用代码等专业能力，包装成能帮助业务&quot;更快获得答案&quot;的方案，例如使用&quot;我们能不能试个更快的办法？&quot;这样的话术。尽管AI能快速生成代码，但</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">09:09</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2055093068085547507" target="_blank" rel="noopener">牛津大学博士后开源视频翻译工具Violin，支持多语言翻译与视频对话</a>
+          <div class="item-summary">牛津大学博士后Kevin Lin开源视频翻译工具Violin，旨在打破高质量视频内容的语言壁垒。该工具将语音识别、大语言模型翻译与语音合成整合为自动化流水线，支持多语言互译与个性化翻译风格调整，例如将学术报告转化为儿童易懂版本。用户还能直接与视频内容进行对话并获取相关答案。Violin提供Web应用、命令行界面和Agent Skill三种使用方式，所有功能基于MIT协议开源，由Together Compute提供技术支持，适用于内容创作、教育及多模态智能体开发等领域。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">08:44</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2055086814009180316" target="_blank" rel="noopener">开源3D生成工具包：单张图片快速构建可交互3D世界</a>
+          <div class="item-summary">开发者@neilsonks开源了一套专为Claude Code设计的完整3D生成工具包。该工具能将输入的单张图片自动拆解，生成包含环境、网格、物理、灯光和音频的全套可交互3D场景。其流程首先利用图像与3D生成技术提取物体并生成高质量网格，随后移除物体以得到静态背景，最后为整个场景添加物理模拟、实时灯光和环境音效。配套查看器支持对生成物体的点击编辑与一键导出。此工具将以往需数天的2D转3D工作流程缩短至几分钟，适用于游戏开发、世界构建和产品可视化等项目。项目已在GitHub开源</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">08:10</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">Runway：News（网页）</span></div>
+          <a class="item-title" href="https://runwayml.com/news/runway-is-coming-to-japan" target="_blank" rel="noopener">Runway正式进军日本市场，在东京设立总部并投入4000万美元</a>
+          <div class="item-summary">生成式AI公司Runway宣布在日本东京设立总部，正式进军日本市场，并计划投入4000万美元初始资金拓展业务。日本已成为Runway增长最快的市场之一，是其全球企业及自助客户的第三大市场。过去一年，日本企业客户数量增长300%，贡献了Runway亚洲总销售额的三分之一。软银、雅马哈等企业已在营销与创意流程中使用其服务。公司此次扩张旨在贴近日本领先的创意、机器人及制造行业客户，并已开始招募日本市场负责人以组建本地团队。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">08:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+          <a class="item-title" href="https://openai.com/index/building-codex-windows-sandbox" target="_blank" rel="noopener">在 Windows 上构建安全有效的沙箱以启用 Codex</a>
+          <div class="item-summary">OpenAI 为 Windows 平台上的 Codex 构建了一个安全沙箱环境。该沙箱通过严格控制文件访问权限和实施网络限制，确保了代码生成与执行过程的安全性。这一举措使得基于 Codex 的编码助手能够以高效且受控的方式运行，在提供强大编程辅助功能的同时，有效隔离了潜在风险，保障了用户系统的安全。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="paper">
+        <div class="item-time">07:55</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">论文</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2055074608261578949" target="_blank" rel="noopener">AI自主研究实现突破：智能体在nanoGPT优化赛道上超越人类基准</a>
+          <div class="item-summary">Prime Intellect 近期在AI研究自动化领域取得重要进展。他们让Claude Code与Codex智能体完全自主运行于nanoGPT速度挑战的优化器赛道，利用闲置算力完成了近万次实验，消耗约1.4万H200小时。最终，Claude Code将记录提升至2930步，超越了2990步的人类基准。实验显示，智能体在系统整合社区主流优化方法、进行超参数扫描和策略组合方面效率极高，但在要求真正创新的&quot;新颖性检查&quot;环节未能突破基线。该项目将所有实验记录、日志和代码开源，使得A</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">07:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
+          <a class="item-title" href="https://x.com/berryxia/status/2055074211715301830" target="_blank" rel="noopener">Yetone发布Native Feel桌面应用开发Agent Skill</a>
+          <div class="item-summary">开发者Yetone将一篇关于桌面应用开发&quot;最佳实践&quot;的文章转化为一个名为&quot;native-feel-skill&quot;的Agent Skill。该Skill旨在帮助开发者利用Coding Agent，轻松地重构或开发跨平台桌面应用，并使其获得极其接近Native原生应用的性能体验。项目代码已开源在GitHub上。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">07:41</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：Rohan Paul (@rohanpaul_ai)</span></div>
+          <a class="item-title" href="https://x.com/rohanpaul_ai/status/2055071152511594832" target="_blank" rel="noopener">Anthropic的Mythos AI在五天内协助发现并利用两个未知macOS内核漏洞</a>
+          <div class="item-summary">据《华尔街日报》报道，Anthropic的Mythos AI工具在短短五天内，成功帮助研究人员发现了两个此前未知的macOS内核漏洞，并将其串联成一个完整的权限提升攻击链。该攻击针对操作系统最底层的核心，通过组合多个漏洞和技术，绕过了苹果的内存完整性保护机制，访问了本应受保护的系统区域。这凸显出现代macOS的防御重点已从单纯防止漏洞发现，转向增加漏洞利用难度。Mythos在此类研究中展现出强大能力，因为它能协助形成假设、分析代码行为、推理底层约束并建议利用路径，从而大幅加速</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">07:35</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Claude Devs (@ClaudeDevs)</span></div>
+          <a class="item-title" href="https://x.com/ClaudeDevs/status/2055069548672631218" target="_blank" rel="noopener">API提示预缓存加速首令牌生成</a>
+          <div class="item-summary">减少API长提示首令牌生成时间的实用技巧：预热提示缓存。
+
+在用户提示前发送系统提示。Claude会将其写入缓存，但跳过生成任何输出。
+
+当真实用户请求到达时，将直接命中预热缓存。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">07:32</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：opencode (@opencode)</span></div>
+          <a class="item-title" href="https://x.com/opencode/status/2055068702538612784" target="_blank" rel="noopener">OpenCode与Qwen 3.6 Plus再度免费开放</a>
+          <div class="item-summary">OpenCode x Qwen 3.6 Plus - 再次免费
+
+上次各位把我们的容量当成了自助餐。
+
+我们找到了更多GPU。第二轮。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">06:55</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude Code：GitHub Releases（RSS）</span></div>
+          <a class="item-title" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.142" target="_blank" rel="noopener">Claude 代理工具 v2.1.142 版本更新</a>
+          <div class="item-summary">Claude 代理工具发布 v2.1.142 版本。本次更新新增了 `--add-dir`、`--settings`、`--model` 等 8 个用于配置后台会话的命令行标志，并将 Fast 模式的默认模型升级为 Opus 4.7。插件功能得到增强，拥有根目录 `SKILL.md` 的插件现可被识别为技能，插件详情面板会显示其提供的 LSP 服务器。此外，版本修复了超过 15 项问题，包括 MCP 工具超时设置失效、后台会话在系统休眠后异常断开、守护进程升级后无法正常退出、</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">06:05</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Luma AI (@LumaLabsAI)</span></div>
+          <a class="item-title" href="https://x.com/LumaLabsAI/status/2055046873740984429" target="_blank" rel="noopener">Luma Agents高效生成电商素材全流程</a>
+          <div class="item-summary">更多产品。更多市场。更多格式。再无瓶颈。
+
+定义需求。设定风格。Luma Agents 从此处理所有电商活动素材。
+
+立即扩展 → http：//lumalabs.ai/app</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">05:06</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：OpenAI Developers (@OpenAIDevs)</span></div>
+          <a class="item-title" href="https://x.com/OpenAIDevs/status/2055032115964870838" target="_blank" rel="noopener">Codex推出自动化钩子与程序化令牌</a>
+          <div class="item-summary">Codex正变得更易于围绕用户代码实现自动化与定制。其核心更新包括&quot;钩子&quot;功能，允许在任务关键节点运行脚本，以进行工作验证、扫描密钥、记录对话或按仓库定制行为。同时，面向商业和企业团队推出&quot;程序化访问令牌&quot;，提供范围化凭证，可从ChatGPT工作区设置创建，用于CI/CD、发布流程和内部自动化，支持设置过期或撤销，并将使用情况关联回工作区。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">04:11</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Replit (@Replit)</span></div>
+          <a class="item-title" href="https://x.com/Replit/status/2055018223431454850" target="_blank" rel="noopener">Mixpanel集成Replit MCP，开发流程内嵌数据分析</a>
+          <div class="item-summary">发布产品。衡量效果。全在一个流程中完成。
+
+@Mixpanel 现已登陆 Replit MCP。下周伦敦黑客松现场演示👇</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">04:10</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：cb_doge (@cb_doge)</span></div>
+          <a class="item-title" href="https://x.com/cb_doge/status/2055017857352913319" target="_blank" rel="noopener">SuperGrok Heavy限时六折，Grok Build开放测试</a>
+          <div class="item-summary">SuperGrok Heavy 现提供约67%的半年折扣，即每月仅需99美元（原价300美元）。
+
+强烈建议升级至Heavy版本，并试用Grok Build的测试版。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-models">
-        <div class="item-time">01:17</div>
+        <div class="item-time">02:55</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：Krea AI (@krea_ai)</span></div>
-          <a class="item-title" href="https://x.com/krea_ai/status/2054611917365526793" target="_blank" rel="noopener">Krea 2发布访问码，限量体验</a>
-          <div class="item-summary">Krea 2 访问码发放！
-
-K2-PRFUF8 / K2-NRWW9E / K2-CAP48S - 每个码可使用50次。
-
-访问链接如下 👇
-
-【引用 @krea_ai】：this is Krea 2.
-
-our first foundation model， built completely from scratch for aesthetic diversity and stylistic control.
-
-learn more and get early acces</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">01:10</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Claude Devs (@ClaudeDevs)</span></div>
-          <a class="item-title" href="https://x.com/ClaudeDevs/status/2054610152817619388" target="_blank" rel="noopener">Claude付费计划将提供月度编程使用额度</a>
-          <div class="item-summary">自6月15日起，付费Claude计划可申领专用的月度编程使用额度。
-
-该额度涵盖以下用途：
-- Claude Agent SDK
-- claude -p
-- Claude Code GitHub Actions
-- 基于Agent SDK构建的第三方应用</div>
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">Hugging Face：Blog（RSS）</span></div>
+          <a class="item-title" href="https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2" target="_blank" rel="noopener">Granite Embedding Multilingual R2：开源多语言嵌入模型，具备32K上下文与领先检索性能</a>
+          <div class="item-summary">IBM Granite团队在Hugging Face发布了Granite Embedding Multilingual R2多语言文本嵌入模型。该模型采用Apache 2.0开源协议，上下文长度扩展至32K令牌，参数量低于1亿。在MTEB基准的检索评估中，它取得了同规模模型的最佳性能，尤其擅长多语言混合检索，为开发者提供了高效、轻量且可商用的嵌入解决方案。</div>
         </div>
       </div>
 
       <div class="item" data-cats="tip">
-        <div class="item-time">01:08</div>
+        <div class="item-time">02:31</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Kim (@kimmonismus)</span></div>
-          <a class="item-title" href="https://x.com/kimmonismus/status/2054609852094193850" target="_blank" rel="noopener">人形机器人已能自主完成8小时轮班</a>
-          <div class="item-summary">&quot;如果AI抢了你的白领工作，那就转行做蓝领吧。&quot; 🤦♂️
-
-与此同时，蓝领工作：
-
-【引用 @adcock_brett】：观看一组人形机器人以人类绩效水平完成完整的8小时轮班。这是完全自主运行的Helix-02 https：//x.com/i/broadcasts/1dxYljYVREYJX</div>
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Anthropic：Research（发表成果 · 网页）</span></div>
+          <a class="item-title" href="https://www.anthropic.com/research/2028-ai-leadership" target="_blank" rel="noopener">2028年全球AI领导地位的两种情景</a>
+          <div class="item-summary">报告展望2028年中美AI竞争的两种前景。若美国及盟友维持并扩大在关键计算芯片上的优势，通过加强出口管制、遏制技术窃取并加速AI应用，民主国家可确立12-24个月的技术领先，主导AI规则制定。反之，若政策松动，中国可能借助人才优势、利用管制漏洞迅速逼近甚至反超，使威权政权获得大规模自动化压制能力。当前民主国家在计算领域优势显著，但窗口期有限，需立即行动锁定胜局。</div>
         </div>
       </div>
 
       <div class="item" data-cats="tip">
-        <div class="item-time">01:04</div>
+        <div class="item-time">02:00</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Krea AI (@krea_ai)</span></div>
-          <a class="item-title" href="https://x.com/krea_ai/status/2054608834677866557" target="_blank" rel="noopener">情绪板教程：10-20张参考图即可定调</a>
-          <div class="item-summary">很棒的情绪板制作教程！
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Claude：Blog（网页）</span></div>
+          <a class="item-title" href="https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start" target="_blank" rel="noopener">在大型代码库中高效运用Claude Code：最佳实践与入门指南</a>
+          <div class="item-summary">Claude Code已成功部署于数百万行的单体仓库、遗留系统及分布式架构中。其核心在于围绕模型构建的&quot;工具套件&quot;，而非仅依赖模型本身。该套件包含五个关键扩展点：提供代码库概览的CLAUDE.md文件、实现持续改进的钩子、按需加载专业知识的技能、插件以及MCP服务器。它采用智能体搜索模式，直接在开发者本地实时代码库上操作，无需构建和维护集中式索引，从而避免了传统RAG系统在活跃大型代码库中索引过时的问题。团队对代码库设置的投入程度直接决定了其导航效果。</div>
+        </div>
+      </div>
 
-【引用 @goo_vision】：使用Krea 2进行创作 🧵
+      <div class="item" data-cats="tip">
+        <div class="item-time">02:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Claude：Blog（网页）</span></div>
+          <a class="item-title" href="https://claude.com/blog/the-founders-playbook" target="_blank" rel="noopener">创始人手册：构建AI原生初创公司</a>
+          <div class="item-summary">Anthropic公司发布了一份面向AI原生初创企业的实用指南，旨在重塑2026年创业生命周期的构思、最小可行产品、发布和规模化四个核心阶段。该手册为每个阶段提供了具体目标、退出标准、常见失败模式及AI驱动练习，涵盖如何利用Claude进行问题验证与客户发现、避免AI生成代码的技术债务、区分真实产品市场契合度与早期炒作，并引入智能工作流替代创始人手动操作。指南还整合了多家初创企业的实践案例，为从零开始围绕AI构建公司的创始人提供架构、范围与安全方面的最佳实践。</div>
+        </div>
+      </div>
 
-第一步：建立情绪板。
-
-不必强求填满全部250个图片位。
-
-即使只有10-20张优质参考图，也足以确立坚实的视觉方向并产出优秀成果。</div>
+      <div class="item" data-cats="industry">
+        <div class="item-time">01:46</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：小北 (@frxiaobei)</span></div>
+          <a class="item-title" href="https://x.com/frxiaobei/status/2054981573150449754" target="_blank" rel="noopener">OpenEvidence覆盖65%美国医生，shadow AI模式引关注</a>
+          <div class="item-summary">OpenEvidence已覆盖65%的美国医生，4月单月临床场景使用达2700万次，平均每位医生每月使用41次。平台由医生个人通过执业编号在手机上注册，医院最初不知情，Mount Sinai的AI负责人称此为shadow AI，表示其早在基层普及。医院后来才追签企业合作，OpenEvidence强调这是美国医疗史上首次让大多数医生自愿采用单一技术平台的突破。合作伙伴包括NEJM、JAMA、NCCN和Wiley，为此提供了支持。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-products">
-        <div class="item-time">01:02</div>
+        <div class="item-time">01:09</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Runway：News（网页）</span></div>
-          <a class="item-title" href="https://runwayml.com/news/introducing-runway-agent" target="_blank" rel="noopener">Introducing Runway Agent</a>
-          <div class="item-summary">Runway正式发布Runway Agent，这是一个能够通过单次对话将创意想法转化为完整、可发布视频的智能创作伙伴。用户只需用自然语言描述需求，Agent便能根据上下文和目标，自主完成概念提案、故事节奏设计、视觉方向规划，并最终生成包含多场景、旁白、对话和音乐的成片。它旨在为品牌团队、营销人员、创意机构和电影制作人快速生产各类视频内容，如品牌宣传、社交媒体素材和短片，将传统需要数天或数周的审核制作周期压缩至几分钟。该产品现已上线，新免费计划用户可获得1500积分用于制作首个</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Google Developers Blog（RSS）</span></div>
+          <a class="item-title" href="https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps" target="_blank" rel="noopener">Genkit 推出中间件系统：增强智能体AI应用的可控性与可靠性</a>
+          <div class="item-summary">Google开源框架Genkit近日推出其核心中间件系统，旨在提升智能体AI应用的可靠性与可控性。该系统允许开发者在生成调用、模型及工具层进行拦截，以注入自定义行为，如重试机制、模型回退以及人工介入的工具审批流程。通过创建并堆叠自定义中间件，开发者能够实现对模型输出的确定性控制。所有中间件的执行流程均可通过专用的开发者界面进行实时查看与调试，有效支持使用TypeScript、Go、Dart和Python构建生产就绪的智能体应用。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-products">
-        <div class="item-time">00:28</div>
+        <div class="item-time">00:09</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Anthropic：Newsroom（网页）</span></div>
-          <a class="item-title" href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">Anthropic推出面向小型企业的Claude服务包</a>
-          <div class="item-summary">Anthropic推出&quot;Claude for Small Business&quot;服务包，旨在帮助小型企业弥补在AI应用资源上与大型公司的差距。该产品包含一系列连接器和15个开箱即用的自动化工作流，能将Claude深度集成到QuickBooks、PayPal、HubSpot等企业日常工具中。其核心功能是自动化处理财务、运营、销售等领域的重复性任务，如规划薪资、月末结算、追踪发票和分析营销活动等。用户通过Claude Cowork界面操作并手动批准关键步骤，所有任务均由用户发起和控制</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：OpenRouter (@OpenRouter)</span></div>
+          <a class="item-title" href="https://x.com/OpenRouter/status/2054957185982177504" target="_blank" rel="noopener">Recraft AI V4.1上线OpenRouter平台</a>
+          <div class="item-summary">现已在 OpenRouter 上线：@recraftai V4.1！
+
+包含六款新图像生成模型：追求高美学的 V4.1 和 V4.1 Pro，用于 SVG 插画的 V4.1 Vector 和 V4.1 Pro Vector，以及优先考虑克制风格的产品图像的 V4.1 Utility 和 V4.1 Utility Pro。
+
+照片级真实感更自然，渐变更平滑，简短提示词能更准确地命中目标，无需过多手动调整。</div>
         </div>
       </div>
 
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">00:13</div>
+      <div class="item" data-cats="tip">
+        <div class="item-time">00:08</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Runway：Changelog（网页）</span></div>
-          <a class="item-title" href="https://app.runwayml.com/agent" target="_blank" rel="noopener">Runway Agent</a>
-          <div class="item-summary">Runway Agent 是一个集成化创意工具平台，旨在为用户提供实现任何创意所需的全套资源与功能。该平台整合了视频编辑、图像生成、3D建模等多种人工智能驱动工具，允许用户在一个工作流中无缝完成从概念到成品的创作过程。其核心特点是降低了专业内容制作的技术门槛，通过自动化与智能辅助功能，让用户能够更自由地将想法转化为视觉作品。</div>
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Google Developers Blog（RSS）</span></div>
+          <a class="item-title" href="https://developers.googleblog.com/accelerating-on-device-ai-a-look-at-arm-and-google-ai-edge-optimization" target="_blank" rel="noopener">加速设备端AI：Arm与Google AI Edge的优化实践</a>
+          <div class="item-summary">Arm第二代可扩展矩阵扩展（SME2）与Google AI Edge软件栈集成，将CPU转变为强大的矩阵计算加速器，从而实现高性能的设备端生成式AI。本文以Stability AI的&quot;stable-audio-open-small&quot;模型为例，阐述了利用LiteRT、XNNPACK和KleidiAI构建的&quot;转换、优化、部署&quot;自动化硬件加速流程。该方案在基于Arm架构的移动设备和笔记本电脑上，成功实现了音频生成速度提升2倍以上、内存使用减少4倍的显著效果，同时确保了高音频质量。这</div>
         </div>
       </div>
       </div>
     </div>
     <div class="dgroup">
-      <div class="dheader">昨天 <span class='dsub'>05月13日 周三</span></div>
+      <div class="dheader">昨天 <span class='dsub'>05月14日 周四</span></div>
       <div class="ilist">
-      <div class="item" data-cats="tip">
-        <div class="item-time">23:38</div>
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">23:35</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Emad Mostaque (@EMostaque)</span></div>
-          <a class="item-title" href="https://x.com/EMostaque/status/2054587062033043799" target="_blank" rel="noopener">开源psql_bm25s，让PostgreSQL多智能体检索提速23倍</a>
-          <div class="item-summary">在构建多智能体生产级系统时，PostgreSQL虽可靠但检索速度不足。团队为此开发并开源了psql_bm25s，这是一个原生PostgreSQL访问方法，实现了精确的BM25检索。其在标准基准测试中比pg_search快约23倍，使得检索不再成为性能瓶颈和成本负担，智能体得以高效查询数据，为大规模自主智能体应用铺平道路。</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Suno (@suno)</span></div>
+          <a class="item-title" href="https://x.com/suno/status/2054948668625559902" target="_blank" rel="noopener">Suno应用更新亮点</a>
+          <div class="item-summary">Suno应用刚刚焕然一新。
+
+过去几周我们进行了一些更新。
+
+以下是我们喜爱的部分亮点 🧵</div>
         </div>
       </div>
 
       <div class="item" data-cats="industry">
+        <div class="item-time">23:29</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">Anthropic：Newsroom（网页）</span></div>
+          <a class="item-title" href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank" rel="noopener">Anthropic与盖茨基金会达成2亿美元合作，聚焦全球健康与教育</a>
+          <div class="item-summary">Anthropic与盖茨基金会建立为期四年、总额2亿美元的合作，通过资金、Claude使用额度及技术支持，共同推进全球健康、生命科学、教育及经济流动项目。合作重点包括改善中低收入国家约46亿人口的基本医疗，利用AI加速疫苗与疗法研发，并开发公共卫生数据集等公共产品。在教育领域，双方将为美国、撒哈拉以南非洲和印度的K-12学生开发AI教学工具。经济流动方面则关注提升小农户生产力及美国职业技能认证。首批成果预计今年晚些时候发布。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">23:08</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Perplexity (@perplexity_ai)</span></div>
+          <a class="item-title" href="https://x.com/perplexity_ai/status/2054941905633612059" target="_blank" rel="noopener">计算机直连Snowflake实现实时数据洞察</a>
+          <div class="item-summary">计算机现已连接至Snowflake。
+可基于实时仓库数据开展端到端工作，通过SQL、源表、筛选器和指标获取答案。
+这就像一支随时待命的个人数据科学团队，从公司实时数据中提供精准答案。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
         <div class="item-time">23:00</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：可灵 Kling AI (@Kling_ai)</span></div>
-          <a class="item-title" href="https://x.com/Kling_ai/status/2054577409064911330" target="_blank" rel="noopener">Kling AI将亮相2026戛纳探讨AI电影制作</a>
-          <div class="item-summary">Kling AI将于2026年5月18日在戛纳电影节电影市场会议中举办专场活动，主题为&quot;从创意可能到制作现实：Kling AI在电影工作流中的应用&quot;。活动旨在探讨AI辅助电影制作的现状与未来演进。Kling AI通过支持《House of David》、《Born of the Tide》及《RAPHAEL》等项目，展示了AI在好莱坞级制作、全AI生成动画及剧情长片等实际影视生产中的多元化应用。</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：PixVerse (@PixVerse_)</span></div>
+          <a class="item-title" href="https://x.com/PixVerse_/status/2054939801435177238" target="_blank" rel="noopener">一键生成F1进站时刻肖像特效</a>
+          <div class="item-summary">不容错过PitCrewMoment潮流。
+一键将任何肖像转化为F1直播电视进站时刻。
+立即在PixVerse网页端尝试！</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-products">
-        <div class="item-time">22:47</div>
+        <div class="item-time">22:10</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Suno (@suno)</span></div>
-          <a class="item-title" href="https://x.com/suno/status/2054574166104297905" target="_blank" rel="noopener">Suno登陆车载系统，车内流媒体新体验</a>
-          <div class="item-summary">Suno 现在可在 Apple CarPlay 和 Android Auto 上使用🚗
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：百度 Baidu (@Baidu_Inc)</span></div>
+          <a class="item-title" href="https://x.com/Baidu_Inc/status/2054927298403688927" target="_blank" rel="noopener">百度发布面向大规模智能体应用的全栈AI云</a>
+          <div class="item-summary">随着智能体应用迈向更大规模部署，其背后的云技术栈也需同步扩展。
 
-在车里流媒体播放您最喜欢的创作。在早晨通勤时用这个播放列表试试看！
-https：//suno.com/playlist/a255cf6d-bb99-4c1f-aedd-8d584579bddb</div>
+在百度Create大会上，百度集团执行副总裁、百度智能云事业群总裁沈抖宣布推出专为大规模智能体应用打造的全新全栈AI云，其升级涵盖智能体基础设施与AI基础设施。
+
+基于我们自研的昆仑芯AI芯片构建的专用集群，已支持ERNIE 5.1系列中一个关键模型的训练。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-products">
-        <div class="item-time">21:59</div>
+        <div class="item-time">22:03</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Kim (@kimmonismus)</span></div>
-          <a class="item-title" href="https://x.com/kimmonismus/status/2054562237684051974" target="_blank" rel="noopener">全球首个全AI运营的在线广播电台上线，24小时不间断播报AI动态</a>
-          <div class="item-summary">全球首个完全由AI运营的在线广播电台在X平台正式开播，专为创业者、开发者和建设者提供全天候AI领域资讯。该电台由五名具备独立编辑判断、记忆和个性的AI主播主持，不仅能实时播报几分钟内的突发新闻，还提供每30分钟一次的新闻综述、初创公司融资追踪、GitHub等平台的工具趋势分析，并整合社区讨论与行业真实观点。AI主播会主动收集信息模式、发现矛盾并形成论点进行实时辩论，而非单纯播报数据。节目辅以非干扰性环境音乐，旨在让听众在背景收听中高效获取深度行业洞察。</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：小互 (@xiaohu)</span></div>
+          <a class="item-title" href="https://x.com/xiaohu/status/2054925632061231431" target="_blank" rel="noopener">开源工具html-anything助力Agent生成高质量HTML</a>
+          <div class="item-summary">用户分享了对开源项目html-anything的积极体验。该项目旨在让AI Agent能将任何数据转换为具有世界级设计水准的HTML代码。该项目历时三天开发，包含约一万五千行代码，支持75套Skills和9种导出格式，并能兼容包括Claude Code、Codex、OpenClaw、Hermes在内的多种代码生成Agent。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">21:34</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Kimi.ai (@Kimi_Moonshot)</span></div>
+          <a class="item-title" href="https://x.com/Kimi_Moonshot/status/2054918374837322140" target="_blank" rel="noopener">Kimi推出网页桥接扩展 支持多平台交互</a>
+          <div class="item-summary">认识Kimi网页桥接--Kimi的浏览器扩展。
+
+现在智能体可以像人类一样与网站互动：搜索、滚动、点击、输入并完成任务。
+
+支持Kimi Code CLI、Claude Code、Cursor、Codex、Hermes等平台。
+
+现已在http：//kimi.com/features/webbridge和Chrome应用商店上线。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">21:23</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+          <a class="item-title" href="https://github.com/DrCatHicks/learning-opportunities" target="_blank" rel="noopener">克劳德代码与《代码书》技能：有针对性的技能培养</a>
+          <div class="item-summary">开发者发布了一款名为&quot;克劳德代码与《代码书》技能&quot;的GitHub工具，旨在通过刻意练习提升编程技能。该工具利用AI模型生成特定主题的代码示例与解释，帮助用户进行针对性学习。项目在Hacker News上获得104点热度，关注度较高。其核心变化在于将传统的广泛学习转化为聚焦、可重复的技能训练模式，通过结构化练习提升学习效率。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-products">
         <div class="item-time">21:00</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Cloudflare Blog</span></div>
-          <a class="item-title" href="https://blog.cloudflare.com/browser-run-containers" target="_blank" rel="noopener">Browser Run：现基于 Cloudflare Containers 运行，速度更快、扩展性更强</a>
-          <div class="item-summary">Browser Run 产品已基于 Cloudflare Containers 完成重构，实现了使用限制提升、性能加速、可靠性增强以及交付速度提高。此次重构使产品能够更高效地处理大规模并发任务，显著缩短了任务响应时间，并提升了服务稳定性。团队通过容器化技术优化了资源调度与隔离机制，从而为用户提供更快速、更可扩展的浏览器自动化服务。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">20:00</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Cursor Blog</span></div>
-          <a class="item-title" href="https://cursor.com/blog/cloud-agent-development-environments" target="_blank" rel="noopener">为智能体配置开发环境</a>
-          <div class="item-summary">Cursor发布新工具，用于配置云端智能体开发环境。核心更新包括：支持多仓库环境，使智能体可跨代码库协同工作；提供基于Dockerfile的代码化配置，支持构建密钥并优化缓存，命中缓存后构建速度提升70%；增强由智能体主导的环境设置流程，提供验证与故障回退机制。同时新增环境治理与安全功能，如版本历史、审计日志，以及可在环境级别独立管控的网络出口和密钥权限。这些改进旨在帮助团队在受控环境中更高效地运行能端到端处理任务的并行智能体集群。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">18:40</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：百度 Baidu (@Baidu_Inc)</span></div>
-          <a class="item-title" href="https://x.com/Baidu_Inc/status/2054511974172557463" target="_blank" rel="noopener">Miaoda应用与企业版上线，自生成代码占比90%</a>
-          <div class="item-summary">Miaoda应用和Miaoda企业版现已发布，让更多开发者和企业能够使用我们的编程助手！
-
-最有趣的细节是什么？Miaoda应用90%的代码由Miaoda自身生成。
-
-编程助手正使按需定制软件具备商业可行性。截至目前，Miaoda生成的应用已服务超1000万用户，应用总价值达50亿元人民币。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">17:18</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：歸藏 (@op7418)</span></div>
-          <a class="item-title" href="https://x.com/op7418/status/2054491392261632448" target="_blank" rel="noopener">利用搜索垫图提升AI绘画准确性与质量</a>
-          <div class="item-summary">当使用Codex等AI生成涉及生僻事实的配图时，可先让其搜索相关图片作为参考，再基于此生成新图。该方法能确保图像的真实性，同时生成符合比例要求的高清图片。例如，对于云南甲马符这类GPT可能不了解的主题，通过垫图后AI能准确绘制。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">16:50</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
-          <a class="item-title" href="https://x.com/SiliconFlowAI/status/2054484427192050041" target="_blank" rel="noopener">在VS Code中集成多款AI模型开发</a>
-          <div class="item-summary">通过@continuedev在VS Code中直接运行DeepSeek V4、GLM-5.1、Kimi K2.6等多款模型@SiliconFlowAI
-支持标签自动补全、AI对话编辑和智能体功能
-
-以下是3步设置指南 🧵⬇️</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-models">
-        <div class="item-time">14:19</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：商汤 SenseTime (@SenseTime_AI)</span></div>
-          <a class="item-title" href="https://x.com/SenseTime_AI/status/2054446490420924558" target="_blank" rel="noopener">SenseNova-U1 技术报告深度发布：前沿原生多模态模型构建全指南</a>
-          <div class="item-summary">SenseNova-U1 技术报告详尽披露了构建前沿原生多模态模型的方法，核心包括原生多模态统一建模、无损视觉接口、联合自回归与像素空间流匹配训练、以及原生混合专家骨干网络。报告提供了六阶段训练方案、强化学习后训练与蒸馏的完整实践指南。其开源版本 SenseNova-U1-A3B-MoT 基于混合专家架构，仅激活30亿参数，实现了高效快速的性能。相关资源已全面开放，涵盖技术报告、模型权重、代码和演示平台。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">13:26</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：歸藏 (@op7418)</span></div>
-          <a class="item-title" href="https://x.com/op7418/status/2054433146532479266" target="_blank" rel="noopener">AI技能更新地图组件，支持交互与标记</a>
-          <div class="item-summary">Skills功能已更新，新增了带地图的版式和地图组件。用户可让各自的AI更新此技能。更新后的地图支持缩放、拖动等基本交互操作，并且AI能够在地图上进行任意标记。这增强了AI在空间信息处理和可视化方面的能力。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">12:35</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Berry Xia (@berryxia)</span></div>
-          <a class="item-title" href="https://x.com/berryxia/status/2054420138095694324" target="_blank" rel="noopener">oMLX更新强化苹果端侧AI，本地能力直逼云端</a>
-          <div class="item-summary">oMLX项目更新至0.3.9.dev2版本，集成了Gemma 4的MTP视觉路径、DFlash引擎和ParoQuant技术，显著提升了图文处理速度。新增一键启动copilot功能，可便捷接入Claude等工具，并通过oQ自动代理解决显存瓶颈。这些改进大幅增强了本地AI在速度、集成与易用性上的表现，正推动AI能力从云端向个人电脑回归。</div>
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+          <a class="item-title" href="https://openai.com/index/work-with-codex-from-anywhere" target="_blank" rel="noopener">随时随地使用 Codex</a>
+          <div class="item-summary">用户现可通过 ChatGPT 移动应用随时随地使用 Codex。该功能支持跨设备和远程环境实时监控、引导及批准编码任务，实现了对编程工作的无缝移动端管理。</div>
         </div>
       </div>
 
       <div class="item" data-cats="industry">
-        <div class="item-time">11:48</div>
+        <div class="item-time">20:09</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
-          <a class="item-title" href="https://www.ithome.com/0/949/715.htm" target="_blank" rel="noopener">消息称 Anthropic 正就以超 9000 亿美元投前估值筹集至少 300 亿美元谈判</a>
-          <div class="item-summary">据报道，AI公司Anthropic正就新一轮融资进行初步谈判，目标是以超过9000亿美元的投前估值筹集至少300亿美元资金。这有望成为该公司迄今最大规模的融资轮次，交易最快可能在本月底完成。此前，Anthropic在今年2月完成了300亿美元的G轮融资，投后估值为3800亿美元，并从谷歌和亚马逊获得了150亿美元的投资承诺。为应对高昂的算力成本，公司计划于今年晚些时候进行首次公开募股（IPO）。</div>
+          <a class="item-title" href="https://www.ithome.com/0/950/598.htm" target="_blank" rel="noopener">AI 热潮引发民怨：七成美国民众反对家门口建数据中心</a>
+          <div class="item-summary">盖洛普调查显示，高达七成美国民众反对在住宅附近建设数据中心，反对率较去年大幅上升，抵触情绪甚至超过对核电站的接受度。全美已有69个辖区出台暂停令，多地项目因抗议和监管纠纷延期。数据中心建设推高批发电价，导致用电成本激增，并引发空气污染、水资源消耗等担忧。尽管白宫要求AI企业承担配套成本，但仅为无约束力承诺，未来审批将更严苛。</div>
         </div>
       </div>
 
       <div class="item" data-cats="ai-models">
-        <div class="item-time">11:27</div>
+        <div class="item-time">18:49</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：腾讯混元 (@TencentHunyuan)</span></div>
-          <a class="item-title" href="https://x.com/TencentHunyuan/status/2054403079433572357" target="_blank" rel="noopener">Hy3预览版登陆GMI，开源最强模型领跑</a>
-          <div class="item-summary">Hy3 预览版现已登陆 @gmi_cloud。🙌</div>
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">X：商汤 SenseTime (@SenseTime_AI)</span></div>
+          <a class="item-title" href="https://x.com/SenseTime_AI/status/2054876860711149780" target="_blank" rel="noopener">SenseNova U1技术报告发布，基于MoE架构开放模型权重</a>
+          <div class="item-summary">由联合创始人兼首席科学家李沐博士领导的团队发布了SenseNova U1技术报告，详细阐述了其架构、训练方案与创新突破。此次开源同步发布了基于混合专家模型（MoE）的新权重，旨在推动AI领域的透明度、可复现性与进一步创新。团队希望通过开放共享促进整个社区的技术发展。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">17:29</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">X：阿易 AI Notes (@AYi_AInotes)</span></div>
+          <a class="item-title" href="https://x.com/AYi_AInotes/status/2054856518185439662" target="_blank" rel="noopener">OpenAI遭集体诉讼，被指通过追踪代码向Meta等泄露用户查询隐私</a>
+          <div class="item-summary">南加州联邦法院已受理针对OpenAI的集体诉讼，指控其在ChatGPT网站中嵌入Facebook Pixel等代码，侵犯用户隐私。当用户提交查询时，查询主题会作为浏览器标题与含Facebook唯一ID的cookies一并实时发送给Meta。OpenAI虽称仅分享&quot;有限标识符&quot;用于广告，但原告认为查询主题本身即高度敏感的个人信息。此案揭示免费AI服务的潜在代价：用户每一次查询及数字身份可能成为被交易的产品，与许多用户为逃避追踪而选择ChatGPT的初衷形成讽刺对比。</div>
         </div>
       </div>
 
       <div class="item" data-cats="tip">
-        <div class="item-time">11:15</div>
+        <div class="item-time">17:05</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：百度 Baidu (@Baidu_Inc)</span></div>
-          <a class="item-title" href="https://x.com/Baidu_Inc/status/2054400181903524133" target="_blank" rel="noopener">智能体时代新指标：日活跃智能体数</a>
-          <div class="item-summary">Robin提出将日活跃智能体（DAA）作为智能体时代的定义性指标，相当于移动互联网时代的日活跃用户数。
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：Peter Steinberger (@steipete)</span></div>
+          <a class="item-title" href="https://x.com/steipete/status/2054850632067019173" target="_blank" rel="noopener">编写循环运行Codex审查的代码技能</a>
+          <div class="item-summary">编写了一个技能，可以循环运行codex /review直到没有错误为止。
 
-虽然令牌消耗更多反映成本而非价值，但DAA让讨论回归产出本质。
-
-正如Robin所指出的，衡量平台或生态系统健康度时，应更关注DAA指标--即积极工作并交付成果的智能体数量。</div>
+注意事项：它不会为你修复系统架构，所以你仍然需要将BRAIN作为主模型。https：//github.com/steipete/agent-scripts/blob/main/skills/codex-review/SKILL.md</div>
         </div>
       </div>
 
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">11:07</div>
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">16:10</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：Tibo (@thsottiaux)</span></div>
-          <a class="item-title" href="https://x.com/thsottiaux/status/2054398093886673260" target="_blank" rel="noopener">Codex应用内浏览器升级，提升多视口测试与标注效率</a>
-          <div class="item-summary">Codex应用内浏览器功能迎来多项改进，支持在不同视口尺寸下测试应用，并能控制设备工具栏、在不同断点进行点击验证。长时测试中，Codex会在关键节点截图供用户核查。为加速测试，可隐藏应用内浏览器以禁用动画，使测试速度提升1-2倍。此外，标注功能现在发送更快且消耗更少tokens。</div>
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">蚂蚁 inclusionAI：HuggingFace 新模型</span></div>
+          <a class="item-title" href="https://huggingface.co/inclusionAI/Ring-2.6-1T" target="_blank" rel="noopener">inclusionAI/Ring-2.6-1T</a>
+          <div class="item-summary">inclusionAI发布了Ring-2.6-1T模型。该模型在Claw-Eval基准测试中取得了两项关键评估结果：在通用能力评估（General）上得分为58.4，在多轮对话评估（Multi Turn）上得分为86.8。这些分数已记录在相应的评估结果排行榜中。</div>
         </div>
       </div>
       </div>
@@ -545,213 +533,209 @@ https：//suno.com/playlist/a255cf6d-bb99-4c1f-aedd-8d584579bddb</div>
   <div class="section" id="sec-trading">
     <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-trading" onclick="filterCat(this)">🔥 全部热点</button><button class="cat-btn" data-filter="top" data-section="sec-trading" onclick="filterCat(this)">⭐ 顶级热点</button><button class="cat-btn" data-filter="ai_tech" data-section="sec-trading" onclick="filterCat(this)">🚀 AI/科技</button><button class="cat-btn" data-filter="geo" data-section="sec-trading" onclick="filterCat(this)">🎯 地缘政治</button><button class="cat-btn" data-filter="consumer" data-section="sec-trading" onclick="filterCat(this)">🏨 消费旅游</button><button class="cat-btn" data-filter="macro" data-section="sec-trading" onclick="filterCat(this)">📊 宏观利率</button><button class="cat-btn" data-filter="crypto" data-section="sec-trading" onclick="filterCat(this)">🪙 加密资产</button></div>
         <div class="dgroup">
-      <div class="dheader">未知</div>
+      <div class="dheader">今天 <span class='dsub'>05月15日 周五</span></div>
       <div class="ilist">
-      <div class="item" data-cats="">
-        <div class="item-time">--:--</div>
+      <div class="item" data-cats="top">
+        <div class="item-time">11:53</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">公司财报</span><span class="score-badge">58分</span><span class="isrc">Investing.com</span></div>
-          <a class="item-title" href="https://www.investing.com/news/transcripts/earnings-call-transcript-mitsui-q4-2026-beats-eps-but-misses-revenue-93CH-4687092" target="_blank" rel="noopener">Earnings call transcript: Mitsui Q4 2026 beats EPS but misses revenue</a>
-          <div class="item-summary">三井物产2026年第四季度财报每股收益（EPS）超预期，但营收未达市场预期。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span><span class="tgt-list"><span class="tgt-item">$MITSY<span class="tgt-reason">EPS胜营收不及</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">70分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/premium/articles/3772280?layout=wscn-layout" target="_blank" rel="noopener">日债高收益率、日元疲软与强势股市共存：脆弱的再通胀交易还能持续多久？</a>
+          <div class="item-summary">日债收益率攀升、日元疲软与日股强势短期共存，突破中性利率上限正考验日本再通胀政策的可持续性。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="">
-        <div class="item-time">--:--</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">公司财报</span><span class="score-badge">58分</span><span class="isrc">Investing.com</span></div>
-          <a class="item-title" href="https://www.investing.com/news/transcripts/earnings-call-transcript-mitsubishi-motors-q4-2025-misses-eps-but-beats-on-revenue-93CH-4687090" target="_blank" rel="noopener">Earnings call transcript: Mitsubishi Motors Q4 2025 misses EPS but beats on revenue</a>
-          <div class="item-summary">三菱汽车2025年第四季度财报每股收益（EPS）不及预期，但营收表现优于市场预期。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span><span class="tgt-list"><span class="tgt-item">$MMTOY<span class="tgt-reason">EPS不及营收胜</span></span></span></div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="dgroup">
-      <div class="dheader">今天 <span class='dsub'>05月14日 周四</span></div>
-      <div class="ilist">
-      <div class="item" data-cats="top ai_tech">
-        <div class="item-time">11:51</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">65分</span><span class="isrc">BWE TradFi</span><span class="ticker">$NVDA</span></div>
-          <a class="item-title" href="https://t.me/BWEtradfi/5603" target="_blank" rel="noopener">Tradfin: *BEIJING-NVIDIA'S HUANG: SAYS HOPING MEETING WILL BE VERY SUCCESSFUL</a>
-          <div class="item-summary">英伟达CEO黄仁勋在北京表示，希望此次参会能取得非常成功的结果。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span><span class="tgt-list"><span class="tgt-item">$NVDA<span class="tgt-reason">无实质影响</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="top ai_tech">
+      <div class="item" data-cats="crypto top">
         <div class="item-time">11:46</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">70分</span><span class="isrc">Bloomberg Markets</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://www.bloomberg.com/news/articles/2026-05-14/global-funds-ramp-up-korea-stock-exit-as-record-rally-extends" target="_blank" rel="noopener">Global Funds Speed Up Korea Stock Exit as Record Rally Extends</a>
-          <div class="item-summary">韩国股市受本地资金及AI热潮推动屡创新高，但海外投资者仍在加速抛售撤离。</div>
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">72分</span><span class="isrc">The Block</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/401413/hana-bank-upbit-dunamu?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Hana Bank acquires $670 million stake in Upbit parent Dunamu</a>
+          <div class="item-summary">韩亚银行以6.7亿美元收购Upbit母公司Dunamu228万股，获6.55%股份，成为其第四大股东。</div>
           <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="top geo macro">
-        <div class="item-time">11:03</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">75分</span><span class="isrc">Bloomberg Markets</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.bloomberg.com/news/articles/2026-05-14/iran-war-gives-xi-the-chance-to-rekindle-gas-sales-with-trump" target="_blank" rel="noopener">Iran War Gives Xi The Chance to Rekindle Gas Sales With Trump</a>
-          <div class="item-summary">中美领导人在北京会晤，伊朗战争背景下，能源市场密切关注两国天然气销售争端能否取得突破。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$LNG<span class="tgt-reason">出口壁垒降低</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai_tech">
+      <div class="item" data-cats="geo crypto top">
         <div class="item-time">10:59</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">61分</span><span class="isrc">BWE TradFi</span><span class="ticker">$NVDA</span><span class="ticker">$TSLA</span></div>
-          <a class="item-title" href="https://t.me/BWEtradfi/5600" target="_blank" rel="noopener">Tradfin: *BEIJING- MUSK SAYS HE WANTS TO ACCOMPLISH “MANY GOOD THINGS” HERE</a>
-          <div class="item-summary">马斯克在北京表示希望在此成就诸多好事，英伟达CEO称在京会议进展顺利，相关个股TSLA、NVDA或获市场关注。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$TSLA<span class="tgt-reason">在华业务向好</span></span><span class="tgt-item">$NVDA<span class="tgt-reason">会议进展顺利</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span><span class="ticker">$F</span><span class="ticker">$MARA</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/401406/trump-coinbase-strategy-mara?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Trump’s latest disclosure shows Coinbase, Strategy, MARA purchases in Q1</a>
+          <div class="item-summary">特朗普最新披露显示一季度买入Coinbase、Strategy、MARA等资产，其中Coinbase最大一笔交易价值10万-25万美元。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$COIN<span class="tgt-reason">特朗普买入加持</span></span><span class="tgt-item">$MARA<span class="tgt-reason">特朗普买入加持</span></span></span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="crypto top macro">
-        <div class="item-time">10:53</div>
+      <div class="item" data-cats="macro top">
+        <div class="item-time">10:38</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span><span class="ticker">$F</span><span class="ticker">$SOL</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/401200/defi-development-corp-growth-sol-per-share?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Solana treasury firm DeFi Development Corp reports 108% yearly growth in SOL per share</a>
-          <div class="item-summary">Solana旗下财库公司DeFi Development Corp报告每股SOL年增长108%，归因于契合Solana生态的“非常规”策略。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$SOL<span class="tgt-reason">业绩大幅增长</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">70分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772330" target="_blank" rel="noopener">给美联储新主席的“见面礼”：沃什刚上台，市场已“加息”</a>
+          <div class="item-summary">新任美联储主席沃什刚上台，美债各期限收益率大幅走高，市场年内加息预期超30%，其政策空间被压缩。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$TSLA<span class="tgt-reason">加息预期升温</span></span><span class="tgt-item">$NVDA<span class="tgt-reason">加息预期升温</span></span></span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="top geo macro">
-        <div class="item-time">09:00</div>
+      <div class="item" data-cats="ai_tech top">
+        <div class="item-time">08:15</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">70分</span><span class="isrc">Bloomberg Markets</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://www.bloomberg.com/news/articles/2026-05-14/war-turmoil-saps-asian-reserves-with-philippines-india-hit-most" target="_blank" rel="noopener">War Turmoil Saps Asian Reserves With Philippines, India Hit Most</a>
-          <div class="item-summary">伊朗战争引发油价飙升，亚洲多国央行动用外汇储备捍卫本币，菲律宾、印度储备下滑最为严重。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$XOM<span class="tgt-reason">油价上涨利好</span></span><span class="tgt-item">$CVX<span class="tgt-reason">油价上涨利好</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="top ai_tech">
-        <div class="item-time">08:59</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">68分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3772231" target="_blank" rel="noopener">财报后大涨！Nebius市值逼近CoreWeave，争夺第一“AI云”宝座</a>
-          <div class="item-summary">Nebius财报后营收近翻八倍，股价单日涨18%，手握Meta270亿美元大单，市值直逼CoreWeave，AI云赛道双雄对决开启。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$META<span class="tgt-reason">获大额算力单</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="top geo">
-        <div class="item-time">08:44</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">70分</span><span class="isrc">Bloomberg Markets</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.bloomberg.com/news/videos/2026-05-14/what-s-at-stake-as-xi-and-trump-meet-in-beijing-video" target="_blank" rel="noopener">What's At Stake as Xi and Trump Meet in Beijing</a>
-          <div class="item-summary">美国总统特朗普时隔九年对中国进行国事访问，中美两大经济体有望借此会晤稳定双边关系。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">66分</span><span class="isrc">MarketWatch Top Stories</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.marketwatch.com/story/figma-has-a-fix-for-its-ailing-stock-a-new-way-to-make-money-off-its-ai-products-2a4f3489?mod=mw_rss_topstories" target="_blank" rel="noopener">Figma has a fix for its ailing stock — a new way to make money off its AI products</a>
+          <div class="item-summary">Figma财报再次超预期并上调全年展望，同时推出AI产品新盈利方式，股价应声大幅飙升。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$FIGMA<span class="tgt-reason">财报超预期</span></span></span></div>
         </div>
       </div>
 
       <div class="item" data-cats="macro">
-        <div class="item-time">07:34</div>
+        <div class="item-time">07:00</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">MarketWatch Top Stories</span></div>
-          <a class="item-title" href="https://www.marketwatch.com/story/why-3-8-inflation-actually-feels-like-an-8-hit-to-your-retirement-savings-9e0ba615?mod=mw_rss_topstories" target="_blank" rel="noopener">Inflation will likely be higher for longer. Your retirement plan isn’t built for that.</a>
-          <div class="item-summary">通胀或持续高位，现有退休计划难适配；官方CPI掩盖医疗等领域涨幅，过时策略会耗尽投资组合。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$XLE<span class="tgt-reason">能源价格上涨</span></span><span class="tgt-item">$UNH<span class="tgt-reason">医疗成本上涨</span></span><span class="tgt-item">$PGR<span class="tgt-reason">保险成本上涨</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">Federal Reserve Speeches</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm" target="_blank" rel="noopener">Barr, Efficient and Effective Central Banking: Beyond the Balance Sheet</a>
+          <div class="item-summary">美联储官员Barr在纽约大学货币市场协会发表演讲，主题为“高效有效的中央银行：超越资产负债表”。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="top macro">
-        <div class="item-time">07:03</div>
+      <div class="item" data-cats="geo top">
+        <div class="item-time">06:44</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">65分</span><span class="isrc">华尔街见闻</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3772167" target="_blank" rel="noopener">科技巨头力撑标普、纳指新高，英伟达新高，中概股指跑赢大盘，美长债三连跌</a>
-          <div class="item-summary">科技巨头带动标普、纳指创历史新高，英伟达市值逼近5.5万亿美元；美长债三连跌，大宗商品涨跌互现。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$NVDA<span class="tgt-reason">创新高市值攀升</span></span><span class="tgt-item">$CSCO<span class="tgt-reason">股价暴涨17%</span></span><span class="tgt-item">$NEBI<span class="tgt-reason">绩后大幅上涨</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">68分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3772269" target="_blank" rel="noopener">标普纳指又新高，思科飙涨13%创新高，英国政局致英镑暴跌，白银重挫</a>
+          <div class="item-summary">标普500、纳指再创新高，思科飙涨13.4%；英镑因英国政局暴跌，白银受印度加关税重挫，美油获支撑上涨。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$SPX<span class="tgt-reason">突破7500点</span></span><span class="tgt-item">$NVDA<span class="tgt-reason">收涨4.4%</span></span><span class="tgt-item">$CSCO<span class="tgt-reason">飙涨13.4%</span></span><span class="tgt-item">$CBRB<span class="tgt-reason">首日涨68%</span></span></span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="ai_tech">
-        <div class="item-time">03:49</div>
+      <div class="item" data-cats="ai_tech top">
+        <div class="item-time">05:30</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">60分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/05/13/musks-xai-is-running-nearly-50-gas-turbines-unchecked-at-its-mississippi-data-center/" target="_blank" rel="noopener">Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center</a>
-          <div class="item-summary">马斯克旗下xAI在密西西比数据中心运行近50台未受监管的燃气轮机，因将其用作发电厂遭起诉。</div>
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">65分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/" target="_blank" rel="noopener">Elon Musk’s SpaceXAI has been bleeding staff since its merger</a>
+          <div class="item-summary">马斯克旗下SpaceXAI自合并后人员流失严重，2月以来超50名员工离职，引发对 burnout、人才挖角等问题的质疑。</div>
           <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
 
       <div class="item" data-cats="ai_tech">
-        <div class="item-time">01:42</div>
+        <div class="item-time">04:58</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">60分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/05/13/geothermal-startup-fervo-energy-pops-33-in-ipo-debut-fueled-by-ai-data-center-demand/" target="_blank" rel="noopener">Geothermal startup Fervo Energy pops 33% in IPO debut fueled by AI data center demand</a>
-          <div class="item-summary">受AI数据中心需求驱动，地热初创公司Fervo Energy IPO首日大涨33%，其IPO因投资者问询多次扩容。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$FERV<span class="tgt-reason">AI需求催化上涨</span></span></span></div>
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener">OpenAI says Codex is coming to your phone</a>
+          <div class="item-summary">OpenAI宣布Codex将登陆手机，此次更新可提升用户在工作流程管理方面的灵活性。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$MSFT<span class="tgt-reason">Codex落地移动端</span></span></span></div>
         </div>
       </div>
 
       <div class="item" data-cats="crypto top">
-        <div class="item-time">00:34</div>
+        <div class="item-time">04:56</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">CoinDesk</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://www.coindesk.com/policy/2026/05/13/uk-parliament-to-probe-nigel-farage-s-usd6-8-million-donation-from-crypto-billionaire" target="_blank" rel="noopener">UK parliament to probe Nigel Farage’s $6.8 million donation from crypto billionaire</a>
-          <div class="item-summary">英国议会将调查改革党领袖法拉奇收受加密富豪680万美元捐款一事，若违规他可能被暂停下议院职务。</div>
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/401375/decisive-turning-point-crypto-industry-cheers-clarity-act-progress-ethics-questions-linger-next-vote?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">‘Decisive turning point’: Crypto industry cheers Clarity Act’s progress as ethics questions linger ahead of next vote</a>
+          <div class="item-summary">美国参议院委员会推进标志性加密法案《Clarity Act》，加密行业对此庆祝，但法案仍存伦理问题，待下一轮投票。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$COIN<span class="tgt-reason">监管法案获进展</span></span><span class="tgt-item">$MARA<span class="tgt-reason">监管法案获进展</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai_tech macro top">
+        <div class="item-time">04:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">CNBC Tech</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://www.cnbc.com/2026/05/14/cisco-csco-pops-on-ai-demand.html" target="_blank" rel="noopener">Cisco posts best day since 2011 on strong AI demand, CEO says tech is entering a 'networking supercycle'</a>
+          <div class="item-summary">思科AI基础设施及超大规模订单指引远超预期，股价创2011年以来最佳单日表现，CEO称行业进入“网络超级周期”。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$CSCO<span class="tgt-reason">AI需求强劲</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">04:43</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/05/14/lovable-just-backed-a-company-thats-looking-to-bring-vibe-coding-to-hardware/" target="_blank" rel="noopener">Lovable just backed a company that’s looking to bring vibe coding to hardware</a>
+          <div class="item-summary">硬件公司Atech完成80万美元种子前融资，投资方包括a16z侦察基金、红杉侦察基金等，Lovable亦参与投资。</div>
           <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
 
-      <div class="item" data-cats="top ai_tech">
-        <div class="item-time">00:00</div>
+      <div class="item" data-cats="">
+        <div class="item-time">04:23</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">65分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/" target="_blank" rel="noopener">Anthropic courts a new kind of customer: small business owners</a>
-          <div class="item-summary">AI公司Anthropic瞄准小企业客户，标志着AI平台竞争向低端市场延伸，用户获取迎来新战场。</div>
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span><span class="ticker">$V</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/05/14/cerebras-ipo-makes-billions-for-benchmark-but-vc-eric-vishria-almost-didnt-take-the-meeting/" target="_blank" rel="noopener">Cerebras IPO makes billions for Benchmark but VC Eric Vishria almost didn’t take the meeting</a>
+          <div class="item-summary">Cerebras上市为Benchmark带来数十亿美元收益，而十年前该机构VC Eric Vishria曾差点拒绝其融资洽谈。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo crypto top">
+        <div class="item-time">02:33</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/401368/chainlink-ccip-gains-over-2-5-billion-tvl-from-protocols-migrating-layerzero-kraken-bitcoin-latest?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Chainlink CCIP gains over $2.5 billion in TVL from protocols migrating from LayerZero, with Kraken Bitcoin the latest to join</a>
+          <div class="item-summary">受Kelp DAO攻击影响，Kraken Bitcoin等至少四款产品弃用LayerZero跨链技术，转投Chainlink CCIP，使其锁仓量超25亿美元。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$LINK<span class="tgt-reason">TVL增长获合作</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo macro">
+        <div class="item-time">02:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">Federal Reserve Press Releases</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.federalreserve.gov/newsevents/pressreleases/other20260514b.htm" target="_blank" rel="noopener">Stephen I. Miran submits his resignation as a member of the Federal Reserve Board, effective when or shortly before his successor on the Board is sworn in</a>
+          <div class="item-summary">Stephen I. Miran提交美联储理事会成员辞呈，辞呈将在其继任者宣誓就职时或不久前正式生效。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto top">
+        <div class="item-time">01:54</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$BTC</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/401332/strive-shares-7-daily-dividend-company-strategy-firm-debt-free?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Strive shares jump on ‘daily dividend company’ strategy as firm goes debt free</a>
+          <div class="item-summary">Strive旗下SATA将成美国首个工作日每日派发现金股息的上市证券，且公司已无债务，推动其股价大涨。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$STRV<span class="tgt-reason">每日分红无负债</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="macro">
+        <div class="item-time">01:00</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">Federal Reserve Speeches</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm" target="_blank" rel="noopener">Bowman, Opening Remarks</a>
+          <div class="item-summary">美联储官员Bowman通过预录视频，在堪萨斯城联储2026年“推动进步，守护信任”银行业未来会议上发表开幕致辞。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="macro top">
+        <div class="item-time">00:22</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">CNBC Top News</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.cnbc.com/2026/05/14/bessent-sees-substantial-disinflation-ahead-as-warsh-takes-over-the-fed.html" target="_blank" rel="noopener">Bessent sees 'substantial disinflation' ahead as Warsh takes over the Fed</a>
+          <div class="item-summary">贝森特认为沃什接任美联储主席后，美国持续增产将逆转能源驱动的通胀飙升，未来会出现大幅通缩。</div>
           <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
       </div>
     </div>
     <div class="dgroup">
-      <div class="dheader">昨天 <span class='dsub'>05月13日 周三</span></div>
+      <div class="dheader">昨天 <span class='dsub'>05月14日 周四</span></div>
       <div class="ilist">
+      <div class="item" data-cats="crypto top">
+        <div class="item-time">23:42</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">75分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span><span class="ticker">$F</span><span class="ticker">$V</span></div>
+          <a class="item-title" href="https://decrypt.co/367857/bullish-shares-dip-earnings-miss-605-million-loss" target="_blank" rel="noopener">Bullish Shares Dip on Earnings Miss, $605 Million Loss as Value of Crypto Holdings Fell</a>
+          <div class="item-summary">Bullish公布一季度亏损（因加密资产价值缩水），订阅及服务营收不及预期，周四股价下跌。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$BULL<span class="tgt-reason">盈亏不及预期</span></span></span></div>
+        </div>
+      </div>
+
       <div class="item" data-cats="macro">
-        <div class="item-time">23:30</div>
+        <div class="item-time">22:00</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">Federal Reserve Press Releases</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://www.federalreserve.gov/newsevents/pressreleases/other20260513a.htm" target="_blank" rel="noopener">Federal Reserve Board issues Economic Well-Being of U.S. Households in 2025 report</a>
-          <div class="item-summary">美国联邦储备委员会发布《2025年美国家庭经济福祉报告》，暂未披露具体内容。</div>
+          <a class="item-title" href="https://www.federalreserve.gov/newsevents/pressreleases/other20260514a.htm" target="_blank" rel="noopener">Federal Reserve Board releases results from two surveys of senior financial officers at banks about their views on discount window operating days and their strategies and practices for managing reserve balances</a>
+          <div class="item-summary">美联储发布针对银行高管的两项调查结果，内容涉及贴现窗口运营天数看法及准备金余额管理策略。</div>
           <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top macro">
-        <div class="item-time">22:51</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">68分</span><span class="isrc">The Block</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/401169/bitcoin-pinned-near-critical-support-as-hot-ppi-spike-compounds-rate-hike-fears-analysts?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Bitcoin pinned near critical support as hot PPI spike compounds rate hike fears: analysts</a>
-          <div class="item-summary">美国4月核心PPI环比大涨1%（2022年以来最高），加息担忧升温，比特币徘徊在8万美元关键支撑位，加密ETF资金流出。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$GBTC<span class="tgt-reason">加息预期升温</span></span><span class="tgt-item">$BITO<span class="tgt-reason">加息预期升温</span></span><span class="tgt-item">$MARA<span class="tgt-reason">加息预期升温</span></span><span class="tgt-item">$RIOT<span class="tgt-reason">加息预期升温</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top">
-        <div class="item-time">19:43</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">75分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://decrypt.co/367731/morning-minute-cpi-comes-in-hot-stocks-crypto-shrug" target="_blank" rel="noopener">Morning Minute: CPI Comes In Hot; Stocks, Crypto Shrug</a>
-          <div class="item-summary">美国CPI数据超预期，但美股、加密货币未受明显冲击；《透明法案》在明日审议前已获100项修正案。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top macro">
-        <div class="item-time">12:42</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">68分</span><span class="isrc">CoinDesk</span></div>
-          <a class="item-title" href="https://www.coindesk.com/markets/2026/05/13/bitcoin-back-above-usd81-000-after-hot-cpi-print-bnb-doge-lead-majors-gains" target="_blank" rel="noopener">Bitcoin back above $81,000 after hot CPI print, BNB, DOGE lead majors gains</a>
-          <div class="item-summary">美国通胀数据超预期后比特币一度跌至79800美元，现已回升至81200美元上方，BNB、DOGE领涨主流加密货币。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$GBTC<span class="tgt-reason">币价回升</span></span><span class="tgt-item">$BITO<span class="tgt-reason">币价回升</span></span><span class="tgt-item">$MARA<span class="tgt-reason">币价回升</span></span><span class="tgt-item">$RIOT<span class="tgt-reason">币价回升</span></span></span></div>
         </div>
       </div>
       </div>
