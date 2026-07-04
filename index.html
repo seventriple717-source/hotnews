@@ -106,7 +106,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 <body>
 <aside class="sb">
   <div class="sb-logo">💰 财神爷 <span>News</span>
-    <div class="sb-up">更新 2026-07-03 17:33</div>
+    <div class="sb-up">更新 2026-07-04 12:04</div>
   </div>
   <nav class="sb-nav">
     <div class="nav-lbl">精选频道</div>
@@ -122,8 +122,93 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="section active" id="sec-aihot">
     <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-aihot" onclick="filterCat(this)">🔥 全部精选</button><button class="cat-btn" data-filter="ai-models" data-section="sec-aihot" onclick="filterCat(this)">🤖 模型发布</button><button class="cat-btn" data-filter="ai-products" data-section="sec-aihot" onclick="filterCat(this)">🚀 产品更新</button><button class="cat-btn" data-filter="industry" data-section="sec-aihot" onclick="filterCat(this)">🏭 行业动态</button><button class="cat-btn" data-filter="paper" data-section="sec-aihot" onclick="filterCat(this)">📄 论文研究</button><button class="cat-btn" data-filter="tip" data-section="sec-aihot" onclick="filterCat(this)">💡 技巧观点</button></div>
         <div class="dgroup">
-      <div class="dheader">今天 <span class='dsub'>07月03日 周五</span></div>
+      <div class="dheader">今天 <span class='dsub'>07月04日 周六</span></div>
       <div class="ilist">
+      <div class="item" data-cats="tip">
+        <div class="item-time">03:19</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+          <a class="item-title" href="https://github.com/teamchong/pxpipe" target="_blank" rel="noopener">pxpipe：通过图像化压缩输入token降低Claude Code成本</a>
+          <div class="item-summary">pxpipe是一个本地代理，将系统提示、工具文档和历史记录等密集文本渲染为PNG图像，利用图像token成本取决于像素尺寸的特性压缩输入token。在Fable 5模型上，约25k文本token压缩为约2.7k图像token，端到端账单降低59-70%。SWE-bench Lite 10个实例全部通过，成本从$54降至$27；SWE-bench Pro 19对测试中18对判定一致，单次请求成本降低约60%。该方法有损（精确ID等需保持文本），默认仅处理`claude-fabl</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="tip">
+        <div class="item-time">02:51</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Simon Willison 博客</span></div>
+          <a class="item-title" href="https://simonwillison.net/2026/Jul/3/judgement" target="_blank" rel="noopener">Fable 的判断力：Simon Willison 从 Claude Code 团队获得的效率技巧</a>
+          <div class="item-summary">Simon Willison 在 AIE 上与 Claude Code 团队交流后建议，让 Fable（以及 Opus）用自己的判断力工作，而非硬性规定行为。例如，直接让 Fable 自行决定何时编写测试，比给出具体规则更好。为应对价格即将上涨、节省 Fable token，Jesse Vincent 的另一个技巧是告诉 Fable 将较小任务委托给较低功耗模型（Sonnet 用于实质性实现、Haiku 用于机械修改），主循环保留判断、审计和数据合成等任务。Willison </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="dgroup">
+      <div class="dheader">昨天 <span class='dsub'>07月03日 周五</span></div>
+      <div class="ilist">
+      <div class="item" data-cats="tip">
+        <div class="item-time">20:25</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：歸藏 (@op7418)</span></div>
+          <a class="item-title" href="https://x.com/op7418/status/2073020264083050811" target="_blank" rel="noopener">藏师傅PPT与Pencil结合使用技巧</a>
+          <div class="item-summary">用户将藏师傅的AI生成PPT导入Pencil设计软件，可在Pencil中一次性浏览所有页面并手动调整AI常见的排版问题，如元素重叠、对齐不准、字体错误。Pencil提供比PPT更强的编辑能力（对齐、嵌套、打组），支持导出网页和编辑文件，也可导出PNG后直接放入PPT演示。这种工作流昨天经朋友分享验证，大幅提升AI生成内容的可编辑性。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">19:57</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/972/424.htm" target="_blank" rel="noopener">全球首例 AI Agent 勒索攻击曝光，从漏洞利用到数据库加密全程自主完成</a>
+          <div class="item-summary">安全厂商 Sysdig 首次记录到 AI Agent&quot;JADEPUFFER&quot;自动完成的勒索攻击。攻击利用暴露的 Langflow 服务漏洞 CVE-2025-3248 远程执行 Python 代码，随后自主收集 OpenAI、Anthropic、DeepSeek、Gemini 等 API 密钥及阿里云、腾讯云、华为云、AWS、Google Cloud、Azure 等云平台凭证，通过 MinIO 默认密码访问对象存储并创建每 30 分钟连接的计划任务。横向移动到 MySQL 和</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-models">
+        <div class="item-time">19:17</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">模型</span><span class="isrc">公众号：生数科技（Vidu·视频）</span></div>
+          <a class="item-title" href="https://mp.weixin.qq.com/s/RuukpnoOA2tI0ERCNrLgtQ" target="_blank" rel="noopener">生数科技发布 Vidu S1，推动视频生成迈向&quot;实时交互&quot;新时代</a>
+          <div class="item-summary">7月3日，生数科技在2026全球数字经济大会上发布Vidu S1实时交互模型，支持实时视频通话和语音控制视频走向，实现无限时长连续互动。模型采用自回归扩散路线，基于已生成画面和语音指令持续预测后续内容；无需传统建模，一张图片即可创建角色并自定义音色。Vidu S1在540P分辨率下实现25FPS（最高42FPS）实时生成，通过TurboDiffusion等技术降低计算成本，已开启内测。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">18:03</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">公众号：京东JoyAI</span></div>
+          <a class="item-title" href="https://mp.weixin.qq.com/s/XfpxdblzNWa5HxahRoT9pg" target="_blank" rel="noopener">JoyAI App 上线 UGC 数字人功能，用户可&quot;捏&quot;出专属虚拟玩伴</a>
+          <div class="item-summary">JoyAI App 近日上线 UGC 数字人功能，用户只需上传一张照片即可生成专属虚拟数字分身，支持一键复刻写实形象或通过模板重塑为卡通风格，搭配用户自己的语音即可解锁专属陪伴。该功能复用&quot;万能博士&quot;技术底座，集成 JoyAI 语言、语音、数字人大模型，实现行业领先的全双工对话，支持随时打断、自然接话。数字人兼具情绪陪伴与全能助手属性，可提供点外卖、金融咨询、学英语、规划行程等生活服务。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">17:59</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+          <a class="item-title" href="https://webkit.org/blog/18136/introducing-the-safari-mcp-server-for-web-developers" target="_blank" rel="noopener">面向 Web 开发者的 Safari MCP 服务器</a>
+          <div class="item-summary">Safari Technology Preview 247 推出 Safari MCP 服务器，基于 Model Context Protocol，允许任何 MCP 兼容客户端连接 Safari 浏览器窗口。智能体可获取 DOM、网络请求、截图、控制台输出等信息，自主完成调试、性能分析、可访问性检查等任务。内置 `browser_console_messages`、`screenshot`、`evaluate_javascript`、`list_network_request</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="industry">
+        <div class="item-time">17:15</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">IT之家（RSS）</span></div>
+          <a class="item-title" href="https://www.ithome.com/0/972/341.htm" target="_blank" rel="noopener">国家网信办就《互联网信息服务管理办法》再次征求意见，首设&quot;智能信息服务&quot;专章规范AI服务</a>
+          <div class="item-summary">7月3日，国家互联网信息办公室就《互联网信息服务管理办法（修订草案征求意见稿）》再次公开征求意见。草案新增&quot;智能信息服务&quot;专章，要求AI服务提供者公示技术基本原理、训练数据来源，对生成合成内容进行标识，禁止强制用户使用智能服务或利用算法扰乱网络舆论。草案还强化用户账号管理，明确对超过6个月不登录账号可依约注销；要求平台建立网络暴力信息特征库，提供屏蔽、禁止转载等防护选项。意见反馈截止8月2日。</div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="ai-products">
+        <div class="item-time">17:12</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">公众号：面壁智能（MiniCPM）</span></div>
+          <a class="item-title" href="https://mp.weixin.qq.com/s/JVBbqU1O967ktzfEPuDERQ" target="_blank" rel="noopener">面壁智能发布AI全自动预训练框架ForgeTrain，8小时追平Megatron-LM</a>
+          <div class="item-summary">面壁智能发布全球首个完全由AI编写、无人类干预的生产级大模型预训练框架ForgeTrain。该框架针对特定模型和硬件从零自动&quot;锻造&quot;专用训练代码。基准测试显示，ForgeTrain在8小时内追平Megatron-LM，1.5至2天内实现稳定反超，模型FLOPS利用率提升约8%~10%，且可迁移至不同模型（MiniCPM4-0.5B/8B）和硬件（H100及昇腾NPU）。其采用四阶段Harness优化流程，全程自动判定。面壁智能将其工程思想概括为Forge Engineerin</div>
+        </div>
+      </div>
+
       <div class="item" data-cats="ai-products">
         <div class="item-time">16:55</div>
         <div class="item-body">
@@ -226,24 +311,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
       </div>
 
       <div class="item" data-cats="tip">
-        <div class="item-time">02:37</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">LMSYS：Blog（Chatbot Arena 团队）</span></div>
-          <a class="item-title" href="https://www.lmsys.org/blog/2026-07-02-agent-assisted-sglang-development" target="_blank" rel="noopener">Agent辅助的SGLang开发：初步探索</a>
-          <div class="item-summary">SGLang团队将LLM服务、分布式运行时、GPU内核、扩散管道等工作流编码为可执行的SKILL.md文件、脚本、基准合约和审查循环。现有技能包括：SGLang .claude/skills（CUDA调试、内核集成、性能分析等）、SGLang diffusion .claude/skills（扩散模型添加与调优）、BBuf/AI-Infra-Auto-Driven-SKILLS（跨框架SOTA循环）、KDA（MLSys 2026 FlashInfer内核竞赛获胜方案）以及BB</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">02:03</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude：Blog（网页）</span></div>
-          <a class="item-title" href="https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend" target="_blank" rel="noopener">Claude Enterprise 新增用量与成本分析及支出管控功能</a>
-          <div class="item-summary">Claude Enterprise 推出更丰富的管理分析工具和成本控制功能。仪表板现可按群组和用户分析用量与成本，支持按 SCIM 群组筛选，展示制品创建、文件编辑、技能和连接器对应的成本。Claude Code 管理控制台新增&quot;使用量&quot;和&quot;价值&quot;选项卡，分别显示活跃开发者、会话次数、常用命令，以及生产力提升估算、每次提交成本和年度价值估算。分析聊天支持自然语言查询并返回可导出图表。Analytics API 可将数据接入 Datadog Cloud Cost Managem</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
         <div class="item-time">01:46</div>
         <div class="item-body">
           <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">X：OpenRouter (@OpenRouter)</span></div>
@@ -264,7 +331,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
       </div>
     </div>
     <div class="dgroup">
-      <div class="dheader">昨天 <span class='dsub'>07月02日 周四</span></div>
+      <div class="dheader">07月02日 <span class='dsub'> 周四</span></div>
       <div class="ilist">
       <div class="item" data-cats="industry">
         <div class="item-time">23:36</div>
@@ -436,134 +503,205 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
           <div class="item-summary">在自我组织的多智能体LLM系统中，团队无法有效利用专家成员的专业知识。在多个基准测试中，即使明确告知专家身份，团队表现仍落后于最佳成员（专家智能体）的独立能力，性能损失最高达41.1%。失败主因是未能有效利用专家意见，而非识别专家。对话分析显示，团队倾向于&quot;整合性妥协&quot;--平均化专家与非专家观点，随团队规模增大而加剧，且与表现负相关。这种寻求共识的行为同时提升了对抗恶意智能体的鲁棒性，揭示了协同对齐与专业利用之间的根本性权衡。</div>
         </div>
       </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">04:45</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Claude Code：GitHub Releases（RSS）</span></div>
-          <a class="item-title" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.198" target="_blank" rel="noopener">Claude Code v2.1.198 发布</a>
-          <div class="item-summary">Claude Code v2.1.198 更新。Claude in Chrome 现已全面可用。为 claude agents 新增后台智能体通知（agent_needs_input / agent_completed）。新增 /dataviz 技能，提供图表与仪表盘设计指导及配色验证器。Gateway 增加 AWS 上的 Claude Platform 作为上游提供商。后台智能体在 worktree 中完成代码后自动提交、推送并创建草稿 PR。内置 Explore 智能体现</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">01:17</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Google Developers Blog（RSS）</span></div>
-          <a class="item-title" href="https://developers.googleblog.com/ml-development-in-vs-code-with-google-cloud-power-workbench-extension-now-available" target="_blank" rel="noopener">Google Cloud Workbench Notebooks 扩展发布：在 VS Code 中连接云端 Jupyter 环境</a>
-          <div class="item-summary">Google Cloud Workbench Notebooks 扩展正式上线，开发者可在 VS Code 中直接连接可扩展的云端 Jupyter 环境，无需切换上下文即可利用高性能 Google Cloud 基础设施完成机器学习全流程。该扩展已完全开源，可在 GitHub 和 VS Code Marketplace 获取。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="tip">
-        <div class="item-time">00:00</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">技巧</span><span class="isrc">Meta Engineering Blog（RSS）</span></div>
-          <a class="item-title" href="https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale" target="_blank" rel="noopener">Meta 大规模 AI 存储蓝图</a>
-          <div class="item-summary">Meta 运营数百 EB 级存储集群，基于 Tectonic 分层存储层构建 BLOB 存储架构，以应对两大挑战：最大化 GPU 利用率与研究迭代速度。传统 BLOB 架构的多层元数据查询可导致数百毫秒延迟，使 GPU 因 I/O 等待停顿。新架构将训练栈逐步迁移到 BLOB 存储接口上，利用闪存提供可预测的低 pMax 延迟，避免单 GPU 慢速拖慢整批任务。同时，统一的数据湖访问支持地理分布 GPU 间的数据高速注入与跨区移动，提升研究效率。</div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="dgroup">
-      <div class="dheader">07月01日 <span class='dsub'> 周三</span></div>
-      <div class="ilist">
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">23:59</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">X：智谱 Z.ai (@Zai_org)</span></div>
-          <a class="item-title" href="https://x.com/Zai_org/status/2072349453361557898" target="_blank" rel="noopener">智谱推出GLM-5.2官方开发环境ZCode</a>
-          <div class="item-summary">推出 ZCode，GLM-5.2 的官方开发环境
-
-- GLM Coding Plan 订阅用户：现可在 ZCode 获得 1.5 倍使用配额
-- 支持 BYOK：可与您现有的订阅和 API 配合使用
-- 适用于 macOS、Windows 和 Linux
-
-立即下载：http://zcode.z.ai/en</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="industry">
-        <div class="item-time">21:43</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">TechCrunch：AI（RSS）</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash" target="_blank" rel="noopener">Meta效仿SpaceX，将过剩AI算力变现</a>
-          <div class="item-summary">据Bloomberg报道，Meta正计划推出云基础设施业务Meta Compute，对外出售AI计算能力和模型访问权限，直接与AWS、Google Cloud及Azure竞争。Meta已承诺未来几年投入1829亿美元建设AI基础设施，其中俄亥俄州数据中心（规模如曼哈顿）将于今年上线。新业务由基础设施主管Santosh Janardhan、Meta超级智能实验室负责人Daniel Gross和总裁Dina Powell McCormick领导。Meta可能效仿CoreWeave</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="ai-products">
-        <div class="item-time">21:00</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">产品</span><span class="isrc">Cloudflare Blog</span></div>
-          <a class="item-title" href="https://blog.cloudflare.com/content-independence-day-ai-options" target="_blank" rel="noopener">Cloudflare 推出全新AI流量管理选项：区分搜索、智能体与训练爬虫，保护广告页面</a>
-          <div class="item-summary">Cloudflare 为所有网站所有者提供更精细的AI流量管控选项，取代一刀切的屏蔽方式。用户可轻松区分并管理搜索爬虫、AI智能体爬虫和训练爬虫，同时新增保护广告变现页面的能力。</div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="industry">
-        <div class="item-time">18:03</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-ai">行业</span><span class="isrc">The Decoder：AI News（RSS）</span></div>
-          <a class="item-title" href="https://the-decoder.com/openai-paper-reveals-three-gpt-5-6-pro-models-breaking-with-single-top-tier-strategy" target="_blank" rel="noopener">OpenAI论文揭示GPT-5.6三个Pro变体，打破单一顶级策略</a>
-          <div class="item-summary">OpenAI论文首次列出GPT-5.6的三个Pro变体：Luna Pro、Terra Pro和Sol Pro，取代以往单一Pro模式。在基因组学基准中，Sol Pro通过率31.5%居60个测试模型之首，领先标准Sol（28.7%）和Claude Opus 4.8（16.0%）。Pro相比标准版本提升逐级递减：Luna Pro提升7.1个百分点（16.5%→23.6%），Terra Pro提升5.2（23.3%→28.5%），Sol Pro仅提升2.8（28.7%→31.5%</div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
   <div class="section" id="sec-trading">
     <div class="cat-bar"><button class="cat-btn active" data-filter="all" data-section="sec-trading" onclick="filterCat(this)">🔥 全部热点</button><button class="cat-btn" data-filter="top" data-section="sec-trading" onclick="filterCat(this)">⭐ 顶级热点</button><button class="cat-btn" data-filter="ai_tech" data-section="sec-trading" onclick="filterCat(this)">🚀 AI/科技</button><button class="cat-btn" data-filter="geo" data-section="sec-trading" onclick="filterCat(this)">🎯 地缘政治</button><button class="cat-btn" data-filter="consumer" data-section="sec-trading" onclick="filterCat(this)">🏨 消费旅游</button><button class="cat-btn" data-filter="macro" data-section="sec-trading" onclick="filterCat(this)">📊 宏观利率</button><button class="cat-btn" data-filter="crypto" data-section="sec-trading" onclick="filterCat(this)">🪙 加密资产</button></div>
         <div class="dgroup">
-      <div class="dheader">今天 <span class='dsub'>07月03日 周五</span></div>
+      <div class="dheader">今天 <span class='dsub'>07月04日 周六</span></div>
       <div class="ilist">
-      <div class="item" data-cats="top">
-        <div class="item-time">17:12</div>
+      <div class="item" data-cats="">
+        <div class="item-time">11:22</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">华尔街见闻</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3776149" target="_blank" rel="noopener">招商宏观解读非农：恰到好处的就业数据</a>
-          <div class="item-summary">招商宏观解读6月非农新增远低于预期主因休闲酒店业就业回落；失业率下降源于劳动参与率降低，市场削弱年内加息50BP预期，但仍定价下半年加息25BP。</div>
-          
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">Seeking Alpha</span><span class="ticker">$C</span><span class="ticker">$F</span><span class="ticker">$V</span></div>
+          <a class="item-title" href="https://seekingalpha.com/article/4919776-unum-group-fairly-valued-given-some-closed-block-drag?source=feed_all_articles" target="_blank" rel="noopener">Unum Group: Fairly Valued Given Some Closed Block Drag (Rating Downgrade)</a>
+          <div class="item-summary">Unum Group因部分封闭业务板块拖累遭评级下调，当前被认为估值处于合理水平。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$UNM<span class="tgt-reason">评级遭下调</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="geo">
+        <div class="item-time">11:05</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">Seeking Alpha</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://seekingalpha.com/article/4919778-ceasefire-on-paper-tension-below-fixed-income-uncertain-summer?source=feed_all_articles" target="_blank" rel="noopener">Ceasefire On Paper, Tension Below: Fixed Income In An Uncertain Summer</a>
+          <div class="item-summary">夏季市场充满不确定性，固定收益市场表面看似平静，实则暗流涌动，紧张态势未消。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="macro top">
+        <div class="item-time">10:06</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">70分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3776189" target="_blank" rel="noopener">黄金如今又看美联储的脸色了</a>
+          <div class="item-summary">摩根大通认为金价与美国实际利率负相关性回归，下调三季度金价预测至4300美元/盎司，警告美联储提前加息或致金价跌破4000，长期看涨需鸽派转向。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$GOLD<span class="tgt-reason">金价预测下调</span></span><span class="tgt-item">$NEM<span class="tgt-reason">金价预测下调</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">09:04</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">59分</span><span class="isrc">CNBC Top News</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.cnbc.com/2026/07/03/new-jersey-deli-stockfraud-sentence-patten.html" target="_blank" rel="noopener">Feds seek lower prison term for $100M New Jersey deli fraudster — but some reasons why are hidden</a>
+          <div class="item-summary">美国联邦政府为涉及1亿美元新泽西熟食店股票操纵案的James Patten寻求减刑，他是该案第三名将被判刑人员。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$HWIN<span class="tgt-reason">欺诈案后续</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto ai_tech">
+        <div class="item-time">05:20</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">48分</span><span class="isrc">TechCrunch</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/" target="_blank" rel="noopener">The only AI glossary you’ll need this year</a>
+          <div class="item-summary">AI兴起催生大量新术语，这份专属术语表收录了今年你可能遇到的重要AI词汇及对应定义。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto geo">
+        <div class="item-time">05:03</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">64分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://decrypt.co/372749/senator-gillibrand-ban-trump-elected-officials-launching-meme-coins" target="_blank" rel="noopener">Senator Gillibrand Seeks to Ban Trump, Elected Officials From Launching Meme Coins</a>
+          <div class="item-summary">参议员吉利布兰德因特朗普披露超10亿美元加密相关收益，提议禁止特朗普及其他当选官员发行模因币。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">04:39</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">58分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3776180" target="_blank" rel="noopener">黄金结束四周连跌！但分析师认为，持续复苏仍需三个条件</a>
+          <div class="item-summary">黄金本周反弹2.2%终结四周连跌，因美国6月非农远逊预期致加息押注大降；分析师称其持续复苏需满足三大条件。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$GLD<span class="tgt-reason">加息预期降温</span></span><span class="tgt-item">$NEM<span class="tgt-reason">加息预期降温</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">02:43</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/07/03/as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026/" target="_blank" rel="noopener">The browser wars aren’t about search anymore — here are the best alternatives to Chrome and Safari</a>
+          <div class="item-summary">浏览器竞争焦点已不再是搜索，目前已有多款顶级替代浏览器可挑战Chrome和Safari的市场地位。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">02:28</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/07/03/the-dune-keypad-device-can-be-your-meeting-controller-and-more/" target="_blank" rel="noopener">The Dune keypad device can be your meeting controller and more</a>
+          <div class="item-summary">Dune按键设备配备三按键，可根据当前应用切换功能，能用作会议控制器，实现麦克风、视频切换等操作。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto top">
+        <div class="item-time">01:56</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">70分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://decrypt.co/372738/zcash-ironwood-upgrade-developers-restore-confidence-zec-crash" target="_blank" rel="noopener">Zcash Ironwood Upgrade Nears as Developers Work to Restore Confidence After ZEC Crash</a>
+          <div class="item-summary">Zcash的Ironwood升级临近测试网激活，开发者称安全测试未发现新严重bug，旨在恢复ZEC暴跌后的市场信心。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto top">
+        <div class="item-time">01:55</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$BTC</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/407160/cryptoquant-bitcoin-ether-altcoin-exchange-deposits-volatility?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">CryptoQuant says bitcoin and altcoin exchange deposits have spiked, indicating higher volatility ahead</a>
+          <div class="item-summary">CryptoQuant指出比特币交易所存款攀升至近49000BTC（今年仅四次的罕见极值），比特币及山寨币交易所存款激增预示未来波动加剧。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto">
+        <div class="item-time">01:13</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">64分</span><span class="isrc">Decrypt</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://decrypt.co/372737/dave-portnoy-losing-millions-bitcoin-falls" target="_blank" rel="noopener">'Every Time I Buy It, It Tanks': Dave Portnoy Says He's Losing Millions as Bitcoin Falls</a>
+          <div class="item-summary">Barstool Sports创始人戴夫·波特诺伊称投资比特币已亏损数百万美元，但他仍打算持有，哪怕比特币跌至零。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$COIN<span class="tgt-reason">比特币下跌</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="">
+        <div class="item-time">00:30</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://techcrunch.com/2026/07/03/chevy-built-an-all-american-ev-truck-why-is-nobody-buying-it/" target="_blank" rel="noopener">Chevy built an all-American EV truck — why is nobody buying it?</a>
+          <div class="item-summary">雪佛兰推出全美国产电动皮卡Silverado EV，却遭遇市场冷遇，文章分析了该车型的可改进方向。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$GM<span class="tgt-reason">EV皮卡销量低迷</span></span></span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="macro top">
+        <div class="item-time">00:25</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">65分</span><span class="isrc">华尔街见闻</span></div>
+          <a class="item-title" href="https://wallstreetcn.com/articles/3776173" target="_blank" rel="noopener">摩根大通警告：若美联储提前加息，金价可能再次跌破4000甚至测试3500-3600</a>
+          <div class="item-summary">摩根大通指出金价由对利率敏感的ETF资金流主导，自美联储释放鹰派信号后已回调超20%，下调三四季度预测并警告提前加息或致金价跌破4000甚至下探3500-3600。</div>
+          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$GOLD<span class="tgt-reason">金价预期下跌</span></span><span class="tgt-item">$NEM<span class="tgt-reason">金价预期下跌</span></span></span></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="dgroup">
+      <div class="dheader">昨天 <span class='dsub'>07月03日 周五</span></div>
+      <div class="ilist">
+      <div class="item" data-cats="crypto geo">
+        <div class="item-time">22:36</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">64分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
+          <a class="item-title" href="https://decrypt.co/372729/american-charged-israel-spying-iran-exchange-crypto" target="_blank" rel="noopener">American Charged in Israel With Spying for Iran in Exchange for Crypto</a>
+          <div class="item-summary">一名21岁美国男子在耶路撒冷神学院学习期间，被以色列检察官指控为伊朗从事间谍活动。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto top">
+        <div class="item-time">22:32</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/407075/grvt-and-the-rise-of-composable-onchain-wealth?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Grvt and the Rise of Composable Onchain Wealth</a>
+          <div class="item-summary">加密衍生品市场中永续期货已成主导工具，去中心化Perp DEX板块持续增长，Grvt推动可组合链上财富兴起。</div>
+          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
+        </div>
+      </div>
+
+      <div class="item" data-cats="crypto macro top">
+        <div class="item-time">19:21</div>
+        <div class="item-body">
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$F</span></div>
+          <a class="item-title" href="https://www.theblock.co/post/407131/markets-find-their-footing-bitcoin-holds-61000-rebound-ahead-of-us-independence-day-as-soft-jobs-data-eases-rate-fears?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">‘Markets find their footing’: Bitcoin holds $61,000 rebound ahead of US Independence Day as soft jobs data eases rate fears</a>
+          <div class="item-summary">比特币站稳61000美元、以太坊突破1700美元，美国疲软就业数据缓解加息担忧，现货ETF终结十日资金流出态势。</div>
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$IBIT<span class="tgt-reason">BTC企稳加息缓</span></span><span class="tgt-item">$FBTC<span class="tgt-reason">BTC企稳加息缓</span></span></span></div>
         </div>
       </div>
 
       <div class="item" data-cats="macro top">
         <div class="item-time">16:58</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">76分</span><span class="isrc">CNBC Top News</span><span class="ticker">$F</span></div>
+          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">CNBC Top News</span><span class="ticker">$F</span></div>
           <a class="item-title" href="https://www.cnbc.com/2026/07/03/gold-silver-price-inflation-fed-rate-hike.html" target="_blank" rel="noopener">Gold prices set for first weekly rise in a month as investors scale back Fed rate hike bets</a>
           <div class="item-summary">黄金价格迎来一个月来首次周上涨，因投资者下调对美联储加息的押注，推动金价走高。</div>
-          
-        </div>
-      </div>
-
-      <div class="item" data-cats="">
-        <div class="item-time">16:35</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">63分</span><span class="isrc">华尔街见闻</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3776141" target="_blank" rel="noopener">AI牛市下半场：下游商业化可能比Capex更重要</a>
-          <div class="item-summary">AI牛市下半场下游商业化更关键，当前美AI应用厂商商业化滞后，巨头股价、ROI承压，后续需优先跟踪下游商业化数据。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$CRM<span class="tgt-reason">RPO持续走低</span></span><span class="tgt-item">$AMZN<span class="tgt-reason">ROI跌破盈亏点</span></span><span class="tgt-item">$MSFT<span class="tgt-reason">股价破均线</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="macro top">
-        <div class="item-time">16:33</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">74分</span><span class="isrc">华尔街见闻</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3776147" target="_blank" rel="noopener">6月美国非农：加息叙事的再“纠正”</a>
-          <div class="item-summary">6月美国非农新增远低于预期、前值下修且薪资跑输通胀，市场重审美联储货币政策路径，6月通胀将成关键验证。</div>
-          
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$GOLD<span class="tgt-reason">金价预期上涨</span></span><span class="tgt-item">$NEM<span class="tgt-reason">金价预期上涨</span></span></span></div>
         </div>
       </div>
 
       <div class="item" data-cats="crypto top">
         <div class="item-time">15:14</div>
         <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">70分</span><span class="isrc">The Block</span><span class="ticker">$IBIT</span></div>
+          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$IBIT</span></div>
           <a class="item-title" href="https://www.theblock.co/post/407110/us-bitcoin-etfs-222-million-inflows?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">US bitcoin ETFs break 10-day negative streak with $222 million worth of inflows</a>
           <div class="item-summary">美国比特币ETF结束连续10日资金净流出，录得2.22亿美元流入，仅贝莱德IBIT仍净流出4040万美元延续颓势。</div>
-          
+          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$FBTC<span class="tgt-reason">ETF资金流入</span></span><span class="tgt-item">$BITO<span class="tgt-reason">ETF资金流入；利空|$IBIT:持续资金流出</span></span></span></div>
         </div>
       </div>
 
@@ -574,150 +712,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
           <a class="item-title" href="https://www.theblock.co/learn/407111/institutional-bitcoin-adoption-explained-how-blackrock-fidelity-and-others-embraced-btc?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Institutional Bitcoin Adoption Explained: How Blackrock, Fidelity and Others Embraced BTC</a>
           <div class="item-summary">贝莱德、富达等机构已拥抱比特币，机构加密货币采纳涵盖资管、企业等主体参与加密投资，推动行业机构化进程。</div>
           <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$MSTR<span class="tgt-reason">机构布局BTC</span></span><span class="tgt-item">$COIN<span class="tgt-reason">机构布局BTC</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="macro top">
-        <div class="item-time">10:52</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">65分</span><span class="isrc">华尔街见闻</span></div>
-          <a class="item-title" href="https://wallstreetcn.com/articles/3776126" target="_blank" rel="noopener">非农“哑火”，花旗：加息理由已“不复存在”，预计美联储10月重启降息</a>
-          <div class="item-summary">花旗因6月非农远低于预期、通胀压力消退，认为美联储加息理由已无，预计10月重启降息，年底前再降一次至3.0%-3.25%。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$SPX<span class="tgt-reason">降息预期升温</span></span><span class="tgt-item">$QQQ<span class="tgt-reason">降息利好成长</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="geo">
-        <div class="item-time">07:01</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/07/02/private-space-pilots-are-flying-orbital-missions-for-the-us-space-force/" target="_blank" rel="noopener">Private space pilots are flying orbital missions for the US Space Force</a>
-          <div class="item-summary">True Anomaly与Rocket Lab为美国太空部队执行“壮志凌云”式卫星近距离飞行动作，私人太空飞行员参与轨道任务。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$RKLB<span class="tgt-reason">获军方订单</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="">
-        <div class="item-time">05:57</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/07/02/thiel-capitals-jack-selby-nabs-stakes-in-hot-startups-like-etched-through-arizona-connections/" target="_blank" rel="noopener">Thiel Capital’s Jack Selby nabs stakes in hot startups like Etched through Arizona connections</a>
-          <div class="item-summary">Thiel Capital的Jack Selby借亚利桑那人脉布局Etched等热门初创公司，其旗下VC正募资3亿美元设立第二只基金。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto macro geo">
-        <div class="item-time">04:59</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">64分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://decrypt.co/372697/treasury-department-sanctions-130-isis-affiliated-crypto-wallets-tron" target="_blank" rel="noopener">Treasury Department Sanctions Over 130 ISIS-Affiliated Crypto Wallets on Tron</a>
-          <div class="item-summary">美国财政部制裁超130个与ISIS中亚分支关联的波场钱包，泰达已冻结相关关联资金。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="">
-        <div class="item-time">04:42</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/07/02/iqm-europes-first-public-quantum-company-admits-the-future-of-the-tech-is-uncertain/" target="_blank" rel="noopener">IQM, Europe’s first public quantum company, admits the future of the tech is uncertain</a>
-          <div class="item-summary">欧洲首家上市量子公司IQM登陆纳斯达克，估值约19亿美元，同时承认该技术未来前景存在不确定性。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$IQM<span class="tgt-reason">前景存疑</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top">
-        <div class="item-time">03:12</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/407094/cftcs-selig-says-illinois-lawmakers-decided-they-know-better-on-crypto-tax?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">CFTC’s Selig says Illinois lawmakers ‘decided they know better’ on crypto tax</a>
-          <div class="item-summary">CFTC主席迈克尔·塞利格严厉批评伊利诺伊州通过0.2%加密货币交易税法案，称州议员自认为更懂行。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$COIN<span class="tgt-reason">交易税压需求</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top">
-        <div class="item-time">02:52</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$JPM</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/407071/jpmorgan-strategy-mstr-bitcoin-sale-policy-risk-crypto-markets?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">JPMorgan says Strategy’s bitcoin sale policy introduced ‘avoidable’ risk into crypto markets</a>
-          <div class="item-summary">摩根大通分析师指出，Strategy近期的比特币抛售政策给加密市场带来了可规避的双向风险。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$GBTC<span class="tgt-reason">政策引市场风险</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto">
-        <div class="item-time">02:28</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">64分</span><span class="isrc">Decrypt</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://decrypt.co/372686/japanese-financial-giant-sbi-shut-down-bitcoin-mining-pool" target="_blank" rel="noopener">Japanese Financial Giant SBI to Shut Down Bitcoin Mining Pool</a>
-          <div class="item-summary">日本金融巨头SBI旗下子公司SBI Crypto将关闭比特币矿池，成为近期关停挖矿业务的企业之一。</div>
-          <div class="item-sentiment"><span class="sentiment s-bear">利空</span><span class="tgt-list"><span class="tgt-item">$SBH<span class="tgt-reason">矿池业务关停</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="macro top">
-        <div class="item-time">02:09</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">67分</span><span class="isrc">CNBC Top News</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.cnbc.com/2026/07/02/job-seekers-giving-up-labor-force-participation-rate-falls-to-lowest-in-50-years-outside-of-covid-era.html" target="_blank" rel="noopener">Job seekers giving up: Labor force participation rate falls to lowest in 50 years, outside of Covid era</a>
-          <div class="item-summary">美国6月就业报告疲软，失业率下降实则因劳动参与率跌至新冠疫情外50年新低，求职人数放弃找工作。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$SPX<span class="tgt-reason">就业疲软促降息</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top">
-        <div class="item-time">01:30</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$BTC</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/407062/irish-authorities-recover-another-500-bitcoins-lost-clifton-collins-drug-stash?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Irish authorities recover another 500 bitcoins from lost Clifton Collins drug stash</a>
-          <div class="item-summary">爱尔兰当局从Clifton Collins的毒品藏匿处再追回500枚比特币，链上数据显示其钱包现持约4500枚BTC。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="crypto top">
-        <div class="item-time">00:05</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">加密</span><span class="score-badge">65分</span><span class="isrc">The Block</span><span class="ticker">$F</span><span class="ticker">$V</span></div>
-          <a class="item-title" href="https://www.theblock.co/post/407047/robinhood-ceo-says-future-of-crypto-is-in-real-world-assets-not-memecoins?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener">Robinhood CEO says future of crypto is in real-world assets, not memecoins</a>
-          <div class="item-summary">Robinhood CEO Vlad Tenev表示加密货币未来在于现实世界资产而非模因币，坚信传统金融与加密将融合。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="dgroup">
-      <div class="dheader">昨天 <span class='dsub'>07月02日 周四</span></div>
-      <div class="ilist">
-      <div class="item" data-cats="">
-        <div class="item-time">23:26</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">AI/半导体</span><span class="score-badge">55分</span><span class="isrc">TechCrunch</span><span class="ticker">$F</span><span class="ticker">$V</span></div>
-          <a class="item-title" href="https://techcrunch.com/2026/07/02/melinda-gates-venture-firm-backs-magnify-ventures-46-6m-fund-ii/" target="_blank" rel="noopener">Melinda Gates’ venture firm backs Magnify Ventures’ $46.6M Fund II</a>
-          <div class="item-summary">早期风投机构Magnify Ventures募资4660万美元成立第二支基金，Melinda Gates的Pivotal Ventures参与投资。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="macro">
-        <div class="item-time">23:00</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">宏观利率</span><span class="score-badge">63分</span><span class="isrc">Federal Reserve Press Releases</span><span class="ticker">$C</span><span class="ticker">$F</span></div>
-          <a class="item-title" href="https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260702a.htm" target="_blank" rel="noopener">Federal Reserve Board issues enforcement action with Small Business Bank and announces termination enforcement actions with BNP Paribas S.A., BNP Paribas USA, Inc., BNP Paribas Securities Corp., and Community Bankshares, Inc.</a>
-          <div class="item-summary">美联储对Small Business Bank采取执法行动，同时宣布终止对法国巴黎银行旗下多家实体及Community Bankshares的执法行动。</div>
-          <div class="item-sentiment"><span class="sentiment s-bull">利好</span><span class="tgt-list"><span class="tgt-item">$BNPQ<span class="tgt-reason">解除监管行动，利空|无具体标的</span></span></span></div>
-        </div>
-      </div>
-
-      <div class="item" data-cats="macro top">
-        <div class="item-time">18:18</div>
-        <div class="item-body">
-          <div class="item-meta"><span class="badge badge-trading">市场异动</span><span class="score-badge">68分</span><span class="isrc">CNBC Markets</span><span class="ticker">$C</span></div>
-          <a class="item-title" href="https://www.cnbc.com/2026/07/01/world-cup-could-boost-the-june-jobs-report-by-40000-goldman-estimates.html" target="_blank" rel="noopener">World Cup could boost the June jobs report by 40,000, Goldman estimates</a>
-          <div class="item-summary">高盛估计世界杯或拉动美国6月非农就业新增4万人，道琼斯共识预期当月非农新增11.5万人。</div>
-          <div class="item-sentiment"><span class="sentiment s-neutral">中性</span></div>
         </div>
       </div>
       </div>
